@@ -1,0 +1,87 @@
+.App {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-family: imperial;
+  color: #d38a04;
+  margin: 0 auto;
+}
+
+@font-face {
+  font-family: imperial;
+  src: url(../public/imperial.ttf);
+}
+
+p {
+  color: #7a7a79;
+  margin: 0;
+}
+
+span {
+  font-size: 20px;
+  font-weight: 600;
+  color: #d38a04;
+}
+
+.css-11xur9t-MuiPaper-root-MuiTableContainer-root {
+  max-height: calc(100vh - 270px) !important;
+}
+.cellBox > p {
+  color: black;
+}
+
+.cellBox > span {
+  color: #bebebe;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.dates {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  color: #918f8f !important;
+  font-size: 12px !important;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #b65505 !important;
+  font-size: 16px !important;
+  font-weight: 600;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  font-weight: 600;
+}
+
+.css-1aquho2-MuiTabs-indicator {
+  background-color: #b65505 !important;
+}
+
+.MuiTabPanel-root {
+  padding: 20px 0 !important;
+}
+
+/* table  */
+table {
+  position: relative;
+}
+
+thead {
+  background: #ececeb !important;
+  position: sticky;
+  top: 0;
+}
+.css-1ygcj2i-MuiTableCell-root {
+  font-weight: 600 !important;
+  color: #929191 !important;
+}

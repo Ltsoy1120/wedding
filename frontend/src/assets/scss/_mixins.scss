@@ -1,0 +1,87 @@
+@import "vars";
+
+/* Font */
+
+@mixin Typography($size: null, $weight: null, $color: null) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+
+  white-space: pre-line;
+  word-break: normal;
+
+  @include Mobile() {
+    white-space: normal;
+  }
+}
+
+/* Adaptive */
+
+@mixin Mobile {
+  @media screen and (max-width: #{$width-mobile}) {
+    @content;
+  }
+}
+
+@mixin Tablet {
+  @media screen and (max-width: #{$width-desktop}) {
+    @content;
+  }
+}
+
+@mixin Desktop {
+  @media screen and (max-width: #{$width-desktop}) {
+    @content;
+  }
+}
+
+@mixin DesktopLarge {
+  @media screen and (min-width: calc(#{$width-desktop} + 1px)) {
+    @content;
+  }
+}
+
+/* Button */
+
+@mixin Button {
+  width: 100%;
+  background: linear-gradient(to right, $color-main-blue, $color-dark-blue) 0;
+  padding: 15px 20px;
+  border-radius: $border-radius;
+  border: none;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  @include Typography($font-size-3, 600, $color-white);
+  &:hover {
+    background: $color-main;
+  }
+  &:disabled {
+    background: $color-gray;
+    color: $color-light-blue;
+  }
+}
+
+/* Icon */
+
+@mixin Icon {
+  width: 64px;
+  height: 64px;
+  display: block;
+}
+
+/* Identification */
+
+@mixin Identification {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  padding: 50px 0 50px;
+
+  @include Mobile {
+    width: 100%;
+    padding: 50px 0 80px;
+  }
+}
