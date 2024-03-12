@@ -22,6 +22,7 @@ enum Presense {
 }
 
 const FormPage = () => {
+  const API_URL = process.env.API_URL ?? "http://localhost:5000"
   const [state, setState] = useState<FormData>({
     presense: "",
     myName: "",
@@ -106,7 +107,7 @@ const FormPage = () => {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log("state", state)
-    fetch(`http://localhost:5000/api/users/new`, {
+    fetch(`${API_URL}/api/users/new`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json" // Указываем серверу, что отправляем JSON данные
