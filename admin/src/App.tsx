@@ -25,7 +25,7 @@ export const formattedDate = (date: Date) => {
   })
 }
 
-const API_URL = process.env.API_URL ?? "https://wedding-api-two.vercel.app/"
+const API_URL = process.env.API_URL ?? "https://wedding-dv-api.vercel.app/"
 
 function App() {
   const today = new Date()

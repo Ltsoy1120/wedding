@@ -22,7 +22,7 @@ enum Presense {
 }
 
 const FormPage = () => {
-  const API_URL = process.env.API_URL ?? "https://wedding-api-two.vercel.app/"
+  const API_URL = process.env.API_URL ?? "https://wedding-dv-api.vercel.app/"
   const [state, setState] = useState<FormData>({
     presense: "",
     myName: "",
