@@ -107,7 +107,7 @@ const FormPage = () => {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log("state", state)
-    fetch(`${API_URL}/api/users/new`, {
+    fetch(`${API_URL}api/users/new`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json" // Указываем серверу, что отправляем JSON данные

@@ -25,6 +25,8 @@ export const formattedDate = (date: Date) => {
   })
 }
 
+const API_URL = process.env.API_URL
+
 function App() {
   const today = new Date()
   const weddingDate = new Date("2024-06-01")
@@ -59,7 +61,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/users")
+    fetch(`${API_URL}api/users`)
       .then(response => {
         if (!response.ok) {
           throw new Error("Network response was not ok")
@@ -88,7 +90,7 @@ function App() {
   }, [users])
 
   const deleteUser = (id: string) => {
-    fetch(`http://localhost:5000/api/users/${id}/delete`, {
+    fetch(`${API_URL}api/users/${id}/delete`, {
       method: "DELETE"
     })
       .then(response => {
