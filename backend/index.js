@@ -8,15 +8,15 @@ dotenv.config()
 const PORT = 5000
 
 const app = express()
-app.use(cors())
+// app.use(cors())
 
-// app.use(
-//   cors({
-//     origin: ["http://localhost:3000", "https://wedding-dv.vercel.app", "*"],
-//     methods: ["GET", "POST", "DELETE", "OPTIONS"],
-//     credentials: true
-//   })
-// )
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://wedding-dv.vercel.app", "*"],
+    methods: ["GET", "POST", "DELETE", "OPTIONS"],
+    credentials: true
+  })
+)
 
 app.use(express.json())
 app.use("/api/users", usersRouter)
