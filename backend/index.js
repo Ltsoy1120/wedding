@@ -13,7 +13,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5000/",
-      "https://wedding-api-two.vercel.app/",
+      "https://wedding-dv.vercel.app/",
       "*",
       null
     ]
