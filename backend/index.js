@@ -9,7 +9,16 @@ const PORT = 5000
 
 const app = express()
 
-app.use(cors())
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5000/",
+      "https://wedding-api-two.vercel.app/",
+      "*",
+      null
+    ]
+  })
+)
 app.use(express.json())
 app.use("/api/users", usersRouter)
 
