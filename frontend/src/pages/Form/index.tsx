@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import "./style.scss"
 
 interface FormData {
@@ -21,8 +21,9 @@ enum Presense {
   Absent = "absent"
 }
 
-const FormPage = () => {
+const Form = () => {
   const API_URL = process.env.API_URL ?? "https://wedding-dv-api.vercel.app/"
+
   const [state, setState] = useState<FormData>({
     presense: "",
     myName: "",
@@ -127,15 +128,14 @@ const FormPage = () => {
 
   return (
     <div className="form-page">
-      <h2 className="allegro title">
-        Подтвердите, пожалуйста свое <br />
-        присутствие на торжестве!
-        <br /> Будем ждать ответ до
-      </h2>
+      <h1 className="allegro title">
+        Подтвердите, пожалуйста свое присутствие на торжестве!
+        <br /> Будем ждать ответ до:
+      </h1>
       <p className="allegro date">20.05.2024</p>
       <form onSubmit={onSubmit}>
         <div className="radio-block">
-          <p>Выберите ваш вариант:</p>
+          <h2>Выберите ваш вариант:</h2>
           <label>
             <input
               className="real-radio"
@@ -234,7 +234,7 @@ const FormPage = () => {
                         className="delete-btn"
                         onClick={() => deleteChild(child.id)}
                       >
-                        <img src="static/images/delete.png" />
+                        <img src="static/images/delete.png" alt="delete" />
                       </button>
                     </div>
                   ))}
@@ -248,4 +248,4 @@ const FormPage = () => {
   )
 }
 
-export default FormPage
+export default Form

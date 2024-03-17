@@ -1,18 +1,20 @@
 @import "../../assets/scss/bundle.scss";
 
 .form-page {
-  height: 100dvh;
-  padding: 50px;
+  padding: 50px 20px;
   .title {
-    font-size: 30px;
+    text-transform: none;
+    font-size: 28px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
   }
 
   .date {
     font-size: 50px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   form {
@@ -20,19 +22,16 @@
     flex-direction: column;
     gap: 20px;
     border: 2px solid orange;
-    padding: 20px;
+    padding: 15px;
 
     .radio-block {
       display: flex;
       flex-direction: column;
       gap: 20px;
 
-      p {
-        @include Typography($font-size-3, 600, grey);
-      }
-
       label {
         cursor: pointer;
+        @include Typography($font-size-3, 400, $color-secondary-text);
       }
 
       .real-radio {
@@ -49,7 +48,7 @@
         height: 20px;
         border-radius: 50%;
         border: 2px solid orange;
-        margin-right: 20px;
+        margin-right: 10px;
         vertical-align: text-top;
       }
 

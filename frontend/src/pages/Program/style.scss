@@ -1,0 +1,29 @@
+@import "../../assets/scss/bundle.scss";
+
+.program {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  .program-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    &__time {
+      @include Typography($font-size-1, 600, $color-primary-text);
+    }
+
+    h2 {
+      @include Typography($font-size-2, 500, $color-primary-text);
+      text-transform: uppercase;
+    }
+
+    &__text {
+      text-align: center;
+      @include Typography($font-size-3, 400, $color-secondary-text);
+    }
+  }
+}

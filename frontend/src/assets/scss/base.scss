@@ -9,41 +9,26 @@
 
 body {
   font: 16px "Inter", "Arial", sans-serif;
-  color: $color-gray-1;
   overflow-y: scroll;
   margin: unset;
 }
 
-/* Headings */
-
 h1 {
-  @include Typography($font-size-1, 700, $color-black);
-  line-height: 31px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  @include Typography($font-size-1, 700, $color-primary-text);
 }
 
-/* Text */
+h2 {
+  @include Typography($font-size-2, 500, $color-primary-text);
+  text-transform: uppercase;
+  text-align: center;
+}
 
 p {
-  @include Typography($font-size-4, 400, $color-gray-1);
-  line-height: 18px;
-  overflow-wrap: anywhere;
-}
-
-span {
-  @include Typography($font-size-4, 500, $color-dark-grey);
-  line-height: 18px;
-}
-
-/* Anchor */
-
-a {
-  @include Typography($font-size-2, 400, $color-main-blue);
-  line-height: 22px;
-  word-break: normal;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
+  text-align: center;
+  @include Typography($font-size-3, 400, $color-secondary-text);
 }
 
 /* UX */
@@ -88,4 +73,12 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.container {
+  max-width: 500px;
+
+  @include Mobile {
+    max-width: 330px;
+  }
 }
