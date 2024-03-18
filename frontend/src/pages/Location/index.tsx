@@ -11,7 +11,11 @@ const Location = () => {
           ресторанно-гостиничном комплексе
         </p>
         <h2>Eleven Hall & Hotel</h2>
-        <img src="static/images/Eleven.png" alt="Eleven" />
+        <img
+          className="eleven-logo"
+          src="static/images/eleven-logo.jpg"
+          alt="eleven-logo"
+        />
         <img src="static/images/hall.jpg" alt="hall" />
         <p className="program-block__text">ул.Арайлы 16</p>
 

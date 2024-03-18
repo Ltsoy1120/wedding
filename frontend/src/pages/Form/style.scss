@@ -1,7 +1,7 @@
 @import "../../assets/scss/bundle.scss";
 
-.form-page {
-  padding: 50px 20px;
+.form {
+  margin-bottom: 50px;
   .title {
     text-transform: none;
     font-size: 28px;
@@ -30,6 +30,7 @@
       gap: 20px;
 
       label {
+        display: flex;
         cursor: pointer;
         @include Typography($font-size-3, 400, $color-secondary-text);
       }
