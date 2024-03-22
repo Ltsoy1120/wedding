@@ -21,25 +21,21 @@
   .candles-left {
     position: absolute;
     width: 20%;
-    top: 30%;
+    top: 35%;
     left: 0;
+    outline: hidden;
   }
 
   .candles-right {
     position: absolute;
-    width: 50%;
+    width: 20%;
     top: 3%;
-    right: -26%;
+    right: 0;
   }
 
   @include Tablet {
     .mask-top {
       width: 35%;
-    }
-
-    .candles-right {
-      width: 30%;
-      right: -16%;
     }
   }
 
@@ -49,8 +45,7 @@
     }
 
     .candles-right {
-      width: 50%;
-      right: -26%;
+      width: 30%;
     }
   }
 }
@@ -92,6 +87,6 @@
   }
 
   @include Mobile {
-    margin-top: 150px;
+    margin-top: 35%;
   }
 }

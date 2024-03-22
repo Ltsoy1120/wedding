@@ -16,7 +16,7 @@ const Main = () => {
       />
       <img
         className="candles-right"
-        src="/static/images/candles-right.png"
+        src="/static/images/candles-half-right.png"
         alt="candles-right"
       />
       <div className="main container">
