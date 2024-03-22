@@ -16,7 +16,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 35%;
   }
 
   .candles-left {
@@ -93,6 +92,6 @@
   }
 
   @include Mobile {
-    margin-top: 40%;
+    margin-top: 150px;
   }
 }
