@@ -76,8 +76,12 @@ img {
 }
 
 .container {
-  max-width: 500px;
+  max-width: 800px;
   padding: 0 20px;
+
+  @include Mobile {
+    width: 100vw;
+  }
 }
 
 .center {

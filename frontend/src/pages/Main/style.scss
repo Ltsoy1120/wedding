@@ -5,24 +5,54 @@
   background: center / cover no-repeat
     url("../../../public/static/images/gold-bg.gif");
   // position: relative;
+  height: 100svh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: hidden;
 
   .mask-top {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    width: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
   }
 
   .candles-left {
     position: absolute;
-    width: 20vw;
+    width: 20%;
+    top: 30%;
+    left: 0;
   }
 
   .candles-right {
     position: absolute;
-    width: 50vw;
+    width: 50%;
     top: 3%;
     right: -26%;
+  }
+
+  @include Tablet {
+    .mask-top {
+      width: 35%;
+    }
+
+    .candles-right {
+      width: 30%;
+      right: -16%;
+    }
+  }
+
+  @include Mobile {
+    .mask-top {
+      width: 80%;
+    }
+
+    .candles-right {
+      width: 50%;
+      right: -26%;
+    }
   }
 }
 
@@ -36,10 +66,15 @@
   &__title {
     text-transform: none;
     letter-spacing: 1px;
-    line-height: 55px;
-    @include Typography(40px, 700, $color-primary-text);
+    line-height: 70px;
+    @include Typography(50px, 700, $color-primary-text);
     text-align: center;
     margin-bottom: 50px;
+
+    @include Mobile {
+      @include Typography(40px, 700, $color-primary-text);
+      line-height: 50px;
+    }
   }
 
   &__date {
