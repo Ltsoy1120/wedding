@@ -1,11 +1,36 @@
 @import "../../assets/scss/bundle.scss";
 
+.main-wrapper {
+  // background: url("../../../public/static/images/background.png");
+  background: center / cover no-repeat
+    url("../../../public/static/images/gold-bg.gif");
+  // position: relative;
+
+  .mask-top {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    width: 80%;
+  }
+
+  .candles-left {
+    position: absolute;
+    width: 20vw;
+  }
+
+  .candles-right {
+    position: absolute;
+    width: 50vw;
+    top: 3%;
+    right: -26%;
+  }
+}
+
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  margin-top: 50px;
   margin-bottom: 50px;
 
   &__title {
@@ -18,12 +43,13 @@
   }
 
   &__date {
-    @include Typography($font-size-1, 600, $color-primary-text);
+    @include Typography(24px, 600, $color-primary-text);
   }
 
   h2 {
     @include Typography($font-size-2, 500, $color-primary-text);
     text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   &__text {

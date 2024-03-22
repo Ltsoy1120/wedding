@@ -4,6 +4,21 @@ import "./style.scss"
 const Main = () => {
   return (
     <div className="main-wrapper">
+      <img
+        className="mask-top"
+        src="/static/images/mask-top.png"
+        alt="mask-top"
+      />
+      <img
+        className="candles-left"
+        src="/static/images/candles-left.png"
+        alt="candles-left"
+      />
+      <img
+        className="candles-right"
+        src="/static/images/candles-right.png"
+        alt="candles-right"
+      />
       <div className="main container">
         <h1 className="main__title vensel">
           Дидар
