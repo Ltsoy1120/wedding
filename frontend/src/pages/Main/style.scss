@@ -2,8 +2,8 @@
 
 .main-wrapper {
   // background: url("../../../public/static/images/background.png");
-  background: center / cover no-repeat
-    url("../../../public/static/images/gold-bg.gif");
+  // background: center / cover no-repeat
+  //   url("../../../public/static/images/gold-bg.gif");
   // position: relative;
   height: 100svh;
   width: 100%;
@@ -11,12 +11,6 @@
   justify-content: center;
   align-items: center;
   outline: hidden;
-
-  .mask-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
 
   .candles-left {
     position: absolute;
@@ -51,42 +45,89 @@
 }
 
 .main {
+  // background: center / cover no-repeat
+  //   url("../../../public/static/images/gold-bg.gif");
+
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 50px;
 
-  &__title {
-    text-transform: none;
-    letter-spacing: 1px;
-    line-height: 70px;
-    @include Typography(50px, 700, $color-primary-text);
-    text-align: center;
-    margin-bottom: 50px;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100svh;
 
-    @include Mobile {
-      @include Typography(40px, 700, $color-primary-text);
-      line-height: 50px;
+    animation: fadeOut 2s ease-in-out forwards;
+    animation-delay: 2s;
+  }
+
+  &__context {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    color: #000;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 6s;
+  }
+
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
     }
   }
 
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  &__title {
+    text-transform: none;
+    line-height: 40px;
+    @include Typography(90px, 400, $color-primary-text);
+    text-align: center;
+    margin-bottom: 40px;
+    padding-left: 25px;
+    text-shadow: 0 4px 4px rgb(172, 170, 170);
+  }
+
   &__date {
-    @include Typography(24px, 600, $color-primary-text);
+    @include Typography(40px, 400, $color-primary-text);
   }
 
   h2 {
-    @include Typography($font-size-2, 500, $color-primary-text);
+    @include Typography(22px, 400, $color-secondary-text);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    text-shadow: 0 4px 4px rgb(172, 170, 170);
   }
 
   &__text {
     text-align: center;
-    @include Typography($font-size-3, 400, $color-secondary-text);
+    @include Typography($font-size-2, 400, $color-secondary-text);
+    text-shadow: 0 2px 4px rgb(172, 170, 170);
   }
 
   @include Mobile {
-    margin-top: 35%;
+    // margin-top: 35%;
   }
 }

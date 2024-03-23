@@ -10,14 +10,13 @@ const Location = () => {
           Мы будем вас ждать в живописном месте в центре Ремизовки, в
           ресторанно-гостиничном комплексе
         </p>
-        <h2>Eleven Hall & Hotel</h2>
         <img
           className="eleven-logo"
           src="static/images/eleven-logo.jpg"
           alt="eleven-logo"
         />
         <img src="static/images/hall.jpg" alt="hall" />
-        <p className="program-block__text">ул.Арайлы 16</p>
+        <h2 className="address">ул.Арайлы 16</h2>
 
         <a
           className="twogis-link"

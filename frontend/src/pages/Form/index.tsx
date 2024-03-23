@@ -129,125 +129,125 @@ const Form = () => {
   return (
     <div className="form">
       <div className="container">
-        <h1 className="allegro title">
+        <h2 className="title">
           Подтвердите, пожалуйста свое присутствие на торжестве!
           <br /> Будем ждать ответ до:
-        </h1>
-        <p className="allegro date">20.05.2024</p>
-        <form onSubmit={onSubmit}>
-          <div className="radio-block">
-            <h2>Выберите ваш вариант:</h2>
-            <label>
-              <input
-                className="real-radio"
-                type="radio"
-                name="presense"
-                value="alone"
-                onChange={onRadioClickHandler}
-              />
-              <span className="custom-radio"></span>Я с удовольствием приду
-            </label>
-            <label>
-              <input
-                className="real-radio"
-                type="radio"
-                name="presense"
-                value="together"
-                onChange={onRadioClickHandler}
-              />
-              <span className="custom-radio"></span>Буду не один / одна
-            </label>
-            <label>
-              <input
-                className="real-radio"
-                type="radio"
-                name="presense"
-                value="absent"
-                onChange={onRadioClickHandler}
-              />
-              <span className="custom-radio"></span>
-              <span className="label-text">
-                К сожалению не смогу присутствовать
-              </span>
-            </label>
-          </div>
-          {state.presense && (
-            <div className="fields-block">
-              <div className="input-field">
-                <label>Вы:</label>
-                <input
-                  autoFocus
-                  placeholder="Фамилия Имя Отчество"
-                  required
-                  name="myName"
-                  onChange={onChangeHandler}
-                />
-              </div>
-              {state.presense === "together" && (
-                <div className="together-block">
-                  <div className="input-field">
-                    <label>Ваша пара:</label>
-                    <input
-                      placeholder="Фамилия Имя Отчество"
-                      name="pairName"
-                      onChange={onChangeHandler}
-                    />
-                  </div>
-
-                  <label className="checkbox">
-                    <input
-                      className="real-checkbox"
-                      type="checkbox"
-                      name="hasChildren"
-                      onChange={onCheckboxClickHandler}
-                    />
-                    <span className="custom-checkbox"></span>С нами будут дети
-                  </label>
-
-                  {state.hasChildren &&
-                    state.children.map((child, index) => (
-                      <div key={index} className="child">
-                        <span>{index + 1}</span>
-                        <input
-                          placeholder="Фамилия Имя"
-                          className="child__name"
-                          required
-                          name="fullName"
-                          value={child.fullName}
-                          onChange={e => onChangeChildHandler(e, child.id)}
-                        />
-                        <input
-                          placeholder="Возраст"
-                          type="number"
-                          className="child__age"
-                          required
-                          name="age"
-                          value={child.age ?? ""}
-                          onChange={e => onChangeChildHandler(e, child.id)}
-                        />
-                        <button
-                          type="button"
-                          className="plus-btn"
-                          onClick={addChild}
-                        >
-                          +
-                        </button>
-                        <button
-                          type="button"
-                          className="delete-btn"
-                          onClick={() => deleteChild(child.id)}
-                        >
-                          <img src="static/images/delete.png" alt="delete" />
-                        </button>
-                      </div>
-                    ))}
-                </div>
-              )}
-            </div>
-          )}
-          <button type="submit">Отправить</button>
-        </form>
+        </h2>
       </div>
+      <p className="allegro date">20.05.2024</p>
+      <form onSubmit={onSubmit}>
+        <div className="radio-block">
+          <h2>Выберите ваш вариант:</h2>
+          <label>
+            <input
+              className="real-radio"
+              type="radio"
+              name="presense"
+              value="alone"
+              onChange={onRadioClickHandler}
+            />
+            <span className="custom-radio"></span>Я с удовольствием приду
+          </label>
+          <label>
+            <input
+              className="real-radio"
+              type="radio"
+              name="presense"
+              value="together"
+              onChange={onRadioClickHandler}
+            />
+            <span className="custom-radio"></span>Буду не один / одна
+          </label>
+          <label>
+            <input
+              className="real-radio"
+              type="radio"
+              name="presense"
+              value="absent"
+              onChange={onRadioClickHandler}
+            />
+            <span className="custom-radio"></span>
+            <span className="label-text">
+              К сожалению не смогу присутствовать
+            </span>
+          </label>
+        </div>
+        {state.presense && (
+          <div className="fields-block">
+            <div className="input-field">
+              <label>Вы:</label>
+              <input
+                autoFocus
+                placeholder="Фамилия Имя Отчество"
+                required
+                name="myName"
+                onChange={onChangeHandler}
+              />
+            </div>
+            {state.presense === "together" && (
+              <div className="together-block">
+                <div className="input-field">
+                  <label>Ваша пара:</label>
+                  <input
+                    placeholder="Фамилия Имя Отчество"
+                    name="pairName"
+                    onChange={onChangeHandler}
+                  />
+                </div>
+
+                <label className="checkbox">
+                  <input
+                    className="real-checkbox"
+                    type="checkbox"
+                    name="hasChildren"
+                    onChange={onCheckboxClickHandler}
+                  />
+                  <span className="custom-checkbox"></span>С нами будут дети
+                </label>
+
+                {state.hasChildren &&
+                  state.children.map((child, index) => (
+                    <div key={index} className="child">
+                      <span>{index + 1}</span>
+                      <input
+                        placeholder="Фамилия Имя"
+                        className="child__name"
+                        required
+                        name="fullName"
+                        value={child.fullName}
+                        onChange={e => onChangeChildHandler(e, child.id)}
+                      />
+                      <input
+                        placeholder="Возраст"
+                        type="number"
+                        className="child__age"
+                        required
+                        name="age"
+                        value={child.age ?? ""}
+                        onChange={e => onChangeChildHandler(e, child.id)}
+                      />
+                      <button
+                        type="button"
+                        className="plus-btn"
+                        onClick={addChild}
+                      >
+                        +
+                      </button>
+                      <button
+                        type="button"
+                        className="delete-btn"
+                        onClick={() => deleteChild(child.id)}
+                      >
+                        <img src="static/images/delete.png" alt="delete" />
+                      </button>
+                    </div>
+                  ))}
+              </div>
+            )}
+          </div>
+        )}
+        <button type="submit">Отправить</button>
+      </form>
     </div>
   )
 }

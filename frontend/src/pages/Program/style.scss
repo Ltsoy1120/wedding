@@ -1,10 +1,15 @@
 @import "../../assets/scss/bundle.scss";
 
 .program {
+  position: absolute;
+  top: 22%;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  z-index: 2;
 
   .program-block {
     display: flex;
@@ -13,17 +18,17 @@
     gap: 10px;
 
     &__time {
-      @include Typography($font-size-1, 600, $color-primary-text);
+      @include Typography($font-size-0, 400, $color-primary-text);
     }
 
     h2 {
-      @include Typography($font-size-2, 500, $color-primary-text);
+      @include Typography($font-size-1, 500, $color-primary-text);
       text-transform: uppercase;
     }
 
     &__text {
       text-align: center;
-      @include Typography($font-size-3, 400, $color-secondary-text);
+      @include Typography($font-size-2, 400, $color-secondary-text);
     }
   }
 }

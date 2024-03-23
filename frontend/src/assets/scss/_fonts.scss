@@ -1,15 +1,10 @@
-@font-face {
-  font-family: vensel;
-  src: url(../../../public/static/fonts/vensel.ttf);
-}
-
-.vensel {
-  font-family: vensel;
+.antarctic {
+  font-family: antarctic;
 }
 
 @font-face {
-  font-family: imperial;
-  src: url(../../../public/static/fonts/imperial.ttf);
+  font-family: antarctic;
+  src: url(../../../public/static/fonts/antarctic.otf);
 }
 
 .imperial {
@@ -17,20 +12,15 @@
 }
 
 @font-face {
-  font-family: allegro;
-  src: url(../../../public/static/fonts/allegro.ttf);
+  font-family: imperial;
+  src: url(../../../public/static/fonts/imperial.ttf);
 }
 
-.allegro {
-  font-family: allegro;
+.forum {
+  font-family: forum;
 }
 
 @font-face {
-  font-family: bickham;
-  src: url(../../../public/static/fonts/bickham.ttf);
-}
-
-.bickham {
-  font-family: bickham;
-  font-weight: normal;
+  font-family: forum;
+  src: url(../../../public/static/fonts/forum.ttf);
 }
