@@ -4,7 +4,7 @@ const Main = () => {
   return (
     <div className="main container">
       <img className="photo" src="/static/images/photo.jpg" alt="photo" />
-      <div className="main__context">
+      {/* <div className="main__context">
         <h1 className="main__title antarctic">
           Дидар
           <br />и<br />
@@ -20,7 +20,7 @@ const Main = () => {
           Будем счастливы <br />
           окунуться вместе с вами <br />в атмосферу Венецианского бала.
         </p>
-      </div>
+      </div> */}
     </div>
   )
 }
