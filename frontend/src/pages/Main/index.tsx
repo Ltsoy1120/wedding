@@ -3,31 +3,15 @@ import "./style.scss"
 const Main = () => {
   return (
     <div className="main">
-      <img
-        className="photo"
-        src="/static/images/photo.jpg"
-        alt="photo"
-        loading="lazy"
-      />
+      <img className="photo" src="/static/images/photo.jpg" alt="photo" />
       <div className="bg-top-wrapper">
-        <img
-          className="bg-top"
-          src="/static/images/bg-top.png"
-          alt="bg-top"
-          loading="lazy"
-        />
+        <img className="bg-top" src="/static/images/bg-top.png" alt="bg-top" />
         <img
           className="mask-top"
           src="/static/images/mask-top.svg"
           alt="mask-top"
-          loading="lazy"
         />
-        <img
-          className="spark"
-          src="/static/images/spark.svg"
-          alt="spark"
-          loading="lazy"
-        />
+        <img className="spark" src="/static/images/spark.svg" alt="spark" />
       </div>
       <div className="main__context">
         <h1 className="main__title antarctic">
