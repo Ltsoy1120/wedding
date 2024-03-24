@@ -8,7 +8,7 @@ const Main = () => {
         <img className="bg-top" src="/static/images/bg-top.png" alt="bg-top" />
         <img
           className="mask-top"
-          src="/static/images/mask-top.png"
+          src="/static/images/mask-top1.png"
           alt="mask-top"
         />
         <img className="spark" src="/static/images/spark.png" alt="spark" />
