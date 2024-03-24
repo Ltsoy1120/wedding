@@ -2,8 +2,17 @@ import "./style.scss"
 
 const Main = () => {
   return (
-    <div className="main container">
+    <div className="main">
       <img className="photo" src="/static/images/photo.jpg" alt="photo" />
+      <div className="bg-top-wrapper">
+        <img className="bg-top" src="/static/images/bg-top.png" alt="bg-top" />
+        <img
+          className="mask-top"
+          src="/static/images/mask-top1.png"
+          alt="mask-top"
+        />
+        <img className="spark" src="/static/images/spark1.png" alt="mask-top" />
+      </div>
       <div className="main__context">
         <h1 className="main__title antarctic">
           Дидар

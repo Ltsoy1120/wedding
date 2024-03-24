@@ -10,15 +10,6 @@ import "./App.scss"
 function App() {
   return (
     <div className="wrapper">
-      <div className="bg-top-wrapper">
-        <img className="bg-top" src="/static/images/bg-top.png" alt="bg-top" />
-        <img
-          className="mask-top"
-          src="/static/images/mask-top1.png"
-          alt="mask-top"
-        />
-        <img className="spark" src="/static/images/spark1.png" alt="mask-top" />
-      </div>
       <Main />
       <div className="bg-program-wrapper">
         <img

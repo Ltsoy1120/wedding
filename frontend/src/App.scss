@@ -5,31 +5,15 @@
   align-items: center;
   margin: 0 auto;
 
-  .bg-top-wrapper {
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-
-    .mask-top {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 90%;
-    }
-
-    .spark {
-      position: absolute;
-      top: 30px;
-      width: 50%;
-      right: 0;
-    }
-  }
-
   .bg-program-wrapper {
     position: relative;
     top: -20vh;
     z-index: 1;
     width: 100%;
+
+    opacity: 0;
+    animation: fadeIn 5s ease-in-out forwards;
+    animation-delay: 5s;
 
     .mask-bottom {
       width: 75%;
@@ -66,6 +50,15 @@
       position: absolute;
       bottom: -20%;
       right: 0;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 }
