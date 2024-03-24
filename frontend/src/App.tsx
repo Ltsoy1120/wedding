@@ -10,6 +10,9 @@ import "./App.scss"
 function App() {
   return (
     <div className="wrapper">
+      {/* <audio controls autoPlay loop>
+        <source src="/static/images/background-music.mp3" type="audio/ogg" />
+      </audio> */}
       <Main />
       <div className="bg-program-wrapper">
         <img
