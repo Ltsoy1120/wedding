@@ -8,10 +8,10 @@ const Main = () => {
         <img className="bg-top" src="/static/images/bg-top.png" alt="bg-top" />
         <img
           className="mask-top"
-          src="/static/images/mask-top1.png"
+          src="/static/images/mask-top.svg"
           alt="mask-top"
         />
-        <img className="spark" src="/static/images/spark1.png" alt="mask-top" />
+        <img className="spark" src="/static/images/spark.svg" alt="spark" />
       </div>
       <div className="main__context">
         <h1 className="main__title antarctic">

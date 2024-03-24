@@ -23,7 +23,7 @@ function App() {
         />
         <img
           className="mask-bottom"
-          src="/static/images/mask-bottom1.png"
+          src="/static/images/mask-bottom.png"
           alt="mask-bottom"
           loading="lazy"
         />
