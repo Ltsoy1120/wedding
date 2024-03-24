@@ -58,15 +58,15 @@
   }
 
   &__title {
-    text-transform: none;
-    line-height: 40px;
-    @include Typography(90px, 400, $color-primary-text);
-    text-align: center;
-    margin-bottom: 20px;
-    padding-left: 25px;
-    text-shadow: 0 4px 4px rgb(172, 170, 170);
+    // text-transform: none;
+    // line-height: 40px;
+    // @include Typography(90px, 400, $color-primary-text);
+    // text-align: center;
+    // margin-bottom: 20px;
+    // padding-left: 25px;
+    // text-shadow: 0 4px 4px rgb(172, 170, 170);
 
-    transform: translate(5px, 10px);
+    // transform: translate(5px, 10px);
   }
 
   &__date {
