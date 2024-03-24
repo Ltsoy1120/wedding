@@ -15,7 +15,8 @@ const Location = () => {
           src="static/images/eleven-logo.jpg"
           alt="eleven-logo"
         />
-        <img src="static/images/hall.jpg" alt="hall" />
+
+        <img src="static/images/hall.jpg" alt="hall" loading="lazy" />
         <h2 className="address">ул.Арайлы 16</h2>
 
         <a
