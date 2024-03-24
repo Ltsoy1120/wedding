@@ -19,7 +19,7 @@ const Main = () => {
           <br />и<br />
           Виктория
         </h1>
-        <img className="vensel" src="/static/images/vensel.png" alt="vensel" />
+        {/* <img className="vensel" src="/static/images/vensel.png" alt="vensel" /> */}
         <p className="main__date forum">01.06.2024</p>
         <h2>
           ПРИГЛАШАЕМ ВАС <br />
