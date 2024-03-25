@@ -38,22 +38,22 @@
 
     .mask-top {
       position: absolute;
-      top: -10px;
+      top: -5px;
       left: 0;
-      width: 80%;
+      width: 70%;
     }
 
     .spark {
       position: absolute;
       top: -20px;
-      width: 50%;
+      width: 40%;
       right: 0;
     }
   }
 
   &__context {
     position: absolute;
-    top: 20%;
+    top: 16%;
     left: 0;
     width: 100%;
 
@@ -69,7 +69,7 @@
   }
 
   &__date {
-    @include Typography(40px, 400, $color-secondary-text);
+    @include Typography($font-size-1, 400, $color-secondary-text);
     margin-bottom: 10px;
 
     opacity: 0;
@@ -78,7 +78,7 @@
   }
 
   h2 {
-    @include Typography(22px, 400, $color-secondary-text);
+    @include Typography($font-size-1, 400, $color-secondary-text);
     text-transform: uppercase;
     margin-bottom: 10px;
 

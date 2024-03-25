@@ -20,7 +20,7 @@ const Main = () => {
         <img className="spark" src="/static/images/spark.png" alt="spark" />
       </div>
       <div className="main__context">
-        <img className="main__title" src="/static/images/DV.svg" alt="DV" />
+        <img className="main__title" src="/static/images/DV.png" alt="DV" />
 
         <p className="main__date forum">01.06.2024</p>
         <h2>
