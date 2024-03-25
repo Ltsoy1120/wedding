@@ -17,7 +17,7 @@ function App() {
       <div className="bg-program-wrapper">
         <img
           className="program-bg"
-          src="/static/images/program-bg.png"
+          src="/static/images/program-bg1.png"
           alt="program-bg"
         />
         <img
@@ -32,12 +32,12 @@ function App() {
         />
         <img
           className="candles-left"
-          src="/static/images/candles-left.png"
+          src="/static/images/candles-left1.png"
           alt="candles-left"
         />
         <img
           className="candles-right"
-          src="/static/images/candles-right.png"
+          src="/static/images/candles-right1.png"
           alt="candles-right"
         />
         <img

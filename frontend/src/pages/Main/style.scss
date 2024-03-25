@@ -20,24 +20,10 @@
     animation-delay: 5s;
   }
 
-  .D,
-  .V {
-    color: #dbdada;
-    font-size: 400px;
-
+  .wedding-day {
     position: absolute;
 
-    animation: fadeInOut 8s ease-in-out forwards;
-  }
-
-  .D {
-    top: 10%;
-    left: 0;
-  }
-
-  .V {
-    bottom: 10%;
-    right: 0;
+    animation: fadeInOut 10s ease-in-out forwards;
   }
 
   .bg-top-wrapper {
@@ -79,7 +65,7 @@
   &__title {
     opacity: 0;
     animation: scaleAndMoveUp 7s ease-in-out forwards;
-    animation-delay: 3s;
+    animation-delay: 5s;
   }
 
   &__date {
@@ -89,7 +75,7 @@
 
     opacity: 0;
     animation: fadeIn 3s ease-in-out forwards;
-    animation-delay: 9s;
+    animation-delay: 10s;
   }
 
   h2 {
@@ -99,7 +85,7 @@
 
     opacity: 0;
     animation: fadeIn 3s ease-in-out forwards;
-    animation-delay: 10s;
+    animation-delay: 12s;
   }
 
   &__text {
@@ -108,7 +94,7 @@
 
     opacity: 0;
     animation: fadeIn 3s ease-in-out forwards;
-    animation-delay: 11s;
+    animation-delay: 13s;
   }
 
   @keyframes fadeOut {

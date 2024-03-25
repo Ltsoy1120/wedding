@@ -4,8 +4,12 @@ const Main = () => {
   return (
     <div className="main">
       <img className="photo" src="/static/images/photo.jpg" alt="photo" />
-      <h2 className="D">D</h2>
-      <h2 className="V">V</h2>
+      <img
+        className="wedding-day"
+        src="/static/images/wedding-day.svg"
+        alt="wedding-day"
+      />
+
       <div className="bg-top-wrapper">
         <img className="bg-top" src="/static/images/bg-top.png" alt="bg-top" />
         <img
@@ -16,7 +20,7 @@ const Main = () => {
         <img className="spark" src="/static/images/spark.png" alt="spark" />
       </div>
       <div className="main__context">
-        <img className="main__title" src="/static/images/DV.png" alt="DV" />
+        <img className="main__title" src="/static/images/DV.svg" alt="DV" />
 
         <p className="main__date forum">01.06.2024</p>
         <h2>
