@@ -17,7 +17,7 @@ const Program = () => {
         <p className="program-block__time">17:00</p>
         <h2>Свадебная церемония </h2>
         <p className="program-block__text">
-          На всякий случай приготовьте платочки для трогательного момента
+          Приготовьте платочки для трогательного момента
         </p>
       </div>
       <img className="vensel" src="/static/images/vensel.png" alt="vensel" />

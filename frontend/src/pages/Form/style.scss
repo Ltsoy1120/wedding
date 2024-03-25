@@ -2,12 +2,13 @@
 
 .form {
   margin: 50px 20px;
+
   .title {
     margin-bottom: 20px;
   }
 
   .date {
-    font-size: 40px;
+    @include Typography($font-size-1, 400, $color-secondary-text);
     text-align: center;
     margin-bottom: 30px;
   }
@@ -15,23 +16,28 @@
   form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
     border: 2px solid #a69e8d;
     border-radius: 20px;
     background: #ebe8e2;
     box-shadow: 1px 1px 10px #371a10;
-    padding: 15px;
+    padding: 30px 15px;
     margin-bottom: 50px;
+
+    h2 {
+      @include Typography($font-size-1, 400, $color-secondary-text);
+    }
 
     .radio-block {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 30px;
 
       label {
         display: flex;
+        align-items: center;
         cursor: pointer;
-        @include Typography($font-size-3, 400, $color-secondary-text);
+        @include Typography($font-size-2, 400, $color-secondary-text);
       }
 
       .real-radio {

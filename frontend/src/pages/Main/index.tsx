@@ -22,14 +22,17 @@ const Main = () => {
       <div className="main__context">
         <img className="main__title" src="/static/images/DV.png" alt="DV" />
 
-        <p className="main__date forum">01.06.2024</p>
+        <p className="main__date">01.06.2024</p>
         <h2>
           ПРИГЛАШАЕМ ВАС <br />
           НА НАШУ СВАДЬБУ
         </h2>
-        <p className="main__text forum">
+        <p className="main__text">
           Будем счастливы окунуться вместе с вами <br />в атмосферу
           Венецианского бала.
+          <br />
+          <br />
+          Подробности ниже
         </p>
       </div>
     </div>
