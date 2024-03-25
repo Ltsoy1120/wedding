@@ -25,8 +25,8 @@ const Location = () => {
           <img src="static/images/link-icon.png" alt="link-icon" />
           <span>Перейти в 2GIS</span>
         </a>
+        <img src="/static/images/divider.svg" alt="divider" />
       </div>
-      <img src="/static/images/divider.svg" alt="divider" />
     </div>
   )
 }

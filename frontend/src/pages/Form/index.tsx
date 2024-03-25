@@ -259,7 +259,9 @@ const Form = () => {
           Отправить
         </button>
       </form>
-      <img src="/static/images/divider.svg" alt="divider" />
+      <div className="container">
+        <img src="/static/images/divider.svg" alt="divider" />
+      </div>
     </div>
   )
 }

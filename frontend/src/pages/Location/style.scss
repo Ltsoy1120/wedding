@@ -9,7 +9,6 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  margin-bottom: 50px;
 }
 
 .eleven-logo {
@@ -25,14 +24,17 @@
 }
 
 .twogis-link {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   background: #e9dfcb;
   padding: 5px 10px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 1px 1px 6px #382201;
   cursor: pointer;
   @include Typography(18px, 600, $color-primary-text);
+  margin-bottom: 40px;
 
   img {
     width: 25px;
