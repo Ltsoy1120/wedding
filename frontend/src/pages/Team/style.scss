@@ -28,6 +28,11 @@
       @include Typography(18px, 600, $color-secondary-text);
     }
   }
+
+  p {
+    text-align: center;
+    @include Typography($font-size-2, 400, $color-secondary-text);
+  }
 }
 
 .avatar {

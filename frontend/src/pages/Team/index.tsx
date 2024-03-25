@@ -5,6 +5,7 @@ const Team = () => {
     <div className="team-wrapper">
       <div className="team container">
         <h1>Организация</h1>
+        <p>Наш праздник будут делать:</p>
         <ul>
           <li>
             <h2>Ведущий -</h2>
@@ -37,6 +38,7 @@ const Team = () => {
           связанные со свадьбой в день торжества, <br />
           на них ответит наш координатор
         </p>
+        <h2>ИМЯ</h2>
         <a className="phone" href="tel:+77777777777">
           +7(777)777-77-77
         </a>
