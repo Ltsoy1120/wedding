@@ -69,8 +69,7 @@
   }
 
   &__date {
-    @include Typography(40px, 400, $color-primary-text);
-    text-shadow: 0 4px 4px rgb(128, 127, 127);
+    @include Typography(40px, 400, $color-secondary-text);
     margin-bottom: 10px;
 
     opacity: 0;
