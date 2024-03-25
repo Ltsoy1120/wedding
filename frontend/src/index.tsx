@@ -1,6 +1,5 @@
-import React, { Suspense, lazy } from "react"
+import { Suspense, lazy } from "react"
 import ReactDOM from "react-dom/client"
-import App from "./App"
 import Loader from "./components/Loader"
 
 const LazyApp = lazy(() => import("./App"))

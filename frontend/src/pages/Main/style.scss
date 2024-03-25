@@ -10,7 +10,7 @@
   align-items: center;
   background: #fffefe;
 
-  .photo {
+  &__photo {
     object-fit: cover;
     object-position: center;
     width: 100%;

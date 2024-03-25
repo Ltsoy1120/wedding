@@ -3,7 +3,7 @@ import "./style.scss"
 const Main = () => {
   return (
     <div className="main">
-      <img className="photo" src="/static/images/photo.jpg" alt="photo" />
+      <img className="main__photo" src="/static/images/dv-photo.jpg" alt="dv" />
       <img
         className="wedding-day"
         src="/static/images/wedding-day.svg"
