@@ -19,6 +19,12 @@ const DressCode = () => {
         <p>
           Маски и другие аксессуары в духе венецианского бала приветствуются!
         </p>
+        <img
+          className="dress-code"
+          src="/static/images/dress-code.png"
+          alt="dress-code"
+        />
+        <img src="/static/images/divider.svg" alt="divider" />
       </div>
     </div>
   )

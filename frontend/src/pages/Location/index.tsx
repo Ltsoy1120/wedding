@@ -1,4 +1,3 @@
-import React from "react"
 import "./style.scss"
 
 const Location = () => {
@@ -23,14 +22,11 @@ const Location = () => {
           className="twogis-link"
           href="https://2gis.kz/almaty/geo/70000001028581820"
         >
-          <img
-            className="twogis-logo"
-            src="static/images/2gis.png"
-            alt="2gis-logo"
-          />
+          <img src="static/images/link-icon.png" alt="link-icon" />
           <span>Перейти в 2GIS</span>
         </a>
       </div>
+      <img src="/static/images/divider.svg" alt="divider" />
     </div>
   )
 }

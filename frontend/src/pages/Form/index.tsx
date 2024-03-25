@@ -40,10 +40,17 @@ const Form = () => {
     const isPresenseValue = Object.values(Presense).includes(value as Presense)
 
     if (isPresenseValue) {
-      setState(prev => ({
-        ...prev,
-        presense: value as Presense
-      }))
+      setState({
+        presense: value as Presense,
+        myName: "",
+        pairName: "",
+        hasChildren: false,
+        children: [{ id: 1, fullName: "", age: null }]
+      })
+      // setState(prev => ({
+      //   ...prev,
+      //   presense: value as Presense
+      // }))
     }
   }
 
@@ -134,7 +141,7 @@ const Form = () => {
           <br /> Будем ждать ответ до:
         </h2>
       </div>
-      <p className="allegro date">20.05.2024</p>
+      <p className="date">20.05.2024</p>
       <form onSubmit={onSubmit}>
         <div className="radio-block">
           <h2>Выберите ваш вариант:</h2>
@@ -181,6 +188,7 @@ const Form = () => {
                 placeholder="Фамилия Имя Отчество"
                 required
                 name="myName"
+                value={state.myName}
                 onChange={onChangeHandler}
               />
             </div>
@@ -191,6 +199,7 @@ const Form = () => {
                   <input
                     placeholder="Фамилия Имя Отчество"
                     name="pairName"
+                    value={state.pairName}
                     onChange={onChangeHandler}
                   />
                 </div>
@@ -246,8 +255,11 @@ const Form = () => {
             )}
           </div>
         )}
-        <button type="submit">Отправить</button>
+        <button disabled={!state.myName} type="submit">
+          Отправить
+        </button>
       </form>
+      <img src="/static/images/divider.svg" alt="divider" />
     </div>
   )
 }

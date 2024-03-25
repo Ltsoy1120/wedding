@@ -84,7 +84,7 @@
 
     opacity: 0;
     animation: fadeIn 3s ease-in-out forwards;
-    animation-delay: 12s;
+    animation-delay: 11s;
   }
 
   &__text {
@@ -93,7 +93,7 @@
 
     opacity: 0;
     animation: fadeIn 3s ease-in-out forwards;
-    animation-delay: 13s;
+    animation-delay: 12s;
   }
 
   @keyframes fadeOut {
@@ -104,11 +104,11 @@
 
   @keyframes fadeIn {
     from {
-      transform: scale(0);
+      transform: translateY(-200px) scale(0);
       opacity: 0;
     }
     to {
-      transform: scale(1);
+      transform: translateY(0) scale(1);
       opacity: 1;
     }
   }

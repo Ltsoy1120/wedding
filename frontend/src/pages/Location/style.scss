@@ -1,5 +1,9 @@
 @import "../../assets/scss/bundle.scss";
 
+.location-wrapper {
+  margin-bottom: 50px;
+}
+
 .location {
   display: flex;
   flex-direction: column;
@@ -23,8 +27,18 @@
 .twogis-link {
   display: flex;
   align-items: center;
+  background: #e9dfcb;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px #382201;
   cursor: pointer;
-  @include Typography(16px, 600, $color-primary-text);
+  @include Typography(18px, 600, $color-primary-text);
+
+  img {
+    width: 25px;
+    margin-right: 5px;
+  }
+
   span {
     text-decoration: underline;
   }

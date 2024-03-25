@@ -10,9 +10,6 @@ import "./App.scss"
 function App() {
   return (
     <div className="wrapper">
-      {/* <audio controls autoPlay loop>
-        <source src="/static/images/background-music.mp3" type="audio/ogg" />
-      </audio> */}
       <Main />
       <div className="bg-program-wrapper">
         <img
@@ -22,7 +19,7 @@ function App() {
         />
         <img
           className="mask-bottom"
-          src="/static/images/mask-bottom1.png"
+          src="/static/images/mask-bottom.png"
           alt="mask-bottom"
         />
         <img
@@ -32,12 +29,12 @@ function App() {
         />
         <img
           className="candles-left"
-          src="/static/images/candles-left1.png"
+          src="/static/images/candles-left.png"
           alt="candles-left"
         />
         <img
           className="candles-right"
-          src="/static/images/candles-right1.png"
+          src="/static/images/candles-right.png"
           alt="candles-right"
         />
         <img

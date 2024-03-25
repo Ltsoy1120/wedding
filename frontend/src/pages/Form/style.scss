@@ -3,11 +3,7 @@
 .form {
   margin: 50px 20px;
   .title {
-    text-transform: none;
-    font-size: 30px;
-    text-align: center;
     margin-bottom: 20px;
-    font-weight: 400;
   }
 
   .date {
@@ -20,8 +16,12 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    border: 2px solid orange;
+    border: 2px solid #a69e8d;
+    border-radius: 15px;
+    background: #ebe8e2;
+    box-shadow: 1px 1px 10px #371a10;
     padding: 15px;
+    margin-bottom: 50px;
 
     .radio-block {
       display: flex;
@@ -47,7 +47,7 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        border: 2px solid orange;
+        border: 2px solid #a69e8d;
         margin-right: 10px;
         vertical-align: text-top;
       }
@@ -59,7 +59,7 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background: #cc7606;
+        background: #704a3d;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -86,16 +86,18 @@
       input {
         width: 100%;
         box-sizing: border-box;
-        border-bottom: 1px solid orange;
+        border-bottom: 1px solid #a69e8d;
       }
 
       input::placeholder {
         color: rgb(179, 177, 177);
+        text-align: center;
       }
 
       .input-field {
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 10px;
         margin-bottom: 20px;
       }
@@ -123,6 +125,7 @@
           border-radius: 50%;
           padding: 10px;
           font-size: 25px;
+          background: linear-gradient(to right, #d8d1c2, #a69e8d) 0;
 
           display: flex;
           align-items: center;
@@ -137,7 +140,6 @@
           height: 30px;
           border-radius: 50%;
           padding: 10px;
-          background: linear-gradient(to right, #f53e3e, #630906) 0;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -163,7 +165,7 @@
           width: 20px;
           height: 20px;
           border-radius: 5px;
-          border: 2px solid orange;
+          border: 2px solid #a69e8d;
           margin-right: 20px;
           vertical-align: text-top;
         }
@@ -192,23 +194,24 @@
 
     button {
       width: 100%;
-      background: linear-gradient(to right, #f5da3e, #cc7606) 0;
+      background: linear-gradient(to right, #704a3d, #371a10) 0;
       padding: 10px 20px;
-      border-radius: 8px;
+      border-radius: 20px;
       border: none;
       text-align: center;
       box-sizing: border-box;
       cursor: pointer;
       @include Typography($font-size-3, 600, white);
-      box-shadow: 2px 2px 6px #382201;
+      box-shadow: 1px 1px 6px #382201;
 
       &:hover {
-        background: #f1c36b;
+        background: #e9dfcb;
       }
       &:disabled {
         cursor: not-allowed;
-        background: gray;
-        color: #4b2c03;
+        background: #faf7f1;
+        box-shadow: 1px 1px 6px #8176624c;
+        color: #ad9e8b;
 
         &:not(:disabled):active {
           opacity: 0.75;
