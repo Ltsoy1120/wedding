@@ -9,13 +9,14 @@ const Location = () => {
           Мы будем вас ждать в живописном месте в центре Ремизовки, в
           ресторанно-гостиничном комплексе
         </p>
+
+        <div className="eleven-hall"></div>
+        {/* <img src="static/images/hall.png" alt="hall" loading="lazy" /> */}
         <img
           className="eleven-logo"
           src="static/images/eleven-logo.jpg"
           alt="eleven-logo"
         />
-
-        <img src="static/images/hall.jpg" alt="hall" loading="lazy" />
         <h2 className="address">ул.Арайлы 16</h2>
 
         <a

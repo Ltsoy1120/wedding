@@ -11,9 +11,22 @@
   gap: 20px;
 }
 
+.eleven-hall {
+  width: 100%;
+  height: 380px;
+  background: linear-gradient(
+      rgba(247, 243, 243, 0.1),
+      rgba(247, 243, 243, 0.2)
+    ),
+    url("../../../public/static/images/hall.png");
+  background-size: cover;
+}
+
 .eleven-logo {
   width: 250px;
+  margin-top: -150px;
 }
+
 .twogis-logo {
   width: 50px;
   margin-right: 10px;
