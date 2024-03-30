@@ -13,8 +13,11 @@
 
 .eleven-hall {
   width: 100%;
-  height: 300px;
-  background: linear-gradient(rgba(250, 249, 249, 0.1), rgba(250, 249, 249, 1)),
+  height: 250px;
+  background: linear-gradient(
+      rgba(250, 249, 249, 0.1),
+      rgba(250, 249, 249, 0.5)
+    ),
     url("../../../public/static/images/hall.jpg");
   background-size: cover;
   border-radius: 20px;
