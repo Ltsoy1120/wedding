@@ -20,7 +20,7 @@ function App() {
           />
           <img
             className="mask-bottom"
-            src="/static/images/mask-bottom.png"
+            src="/static/images/mask-bottom1.png"
             alt="mask-bottom"
           />
           <img
