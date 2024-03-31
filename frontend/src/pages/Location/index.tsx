@@ -11,7 +11,6 @@ const Location = () => {
         </p>
 
         <div className="eleven-hall"></div>
-        {/* <img src="static/images/hall.jpg" alt="hall" loading="lazy" /> */}
         <img
           className="eleven-logo"
           src="static/images/eleven-logo.jpg"

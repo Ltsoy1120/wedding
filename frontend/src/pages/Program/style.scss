@@ -1,8 +1,11 @@
 @import "../../assets/scss/bundle.scss";
 
+.program-wrapper {
+  width: 100%;
+}
 .program {
   position: absolute;
-  top: 22%;
+  top: 10%;
   left: 0;
   right: 0;
   display: flex;

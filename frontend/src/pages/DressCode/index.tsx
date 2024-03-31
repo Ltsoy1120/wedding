@@ -4,11 +4,6 @@ import "./style.scss"
 const DressCode = () => {
   return (
     <div className="dress container">
-      <img
-        className="dress-mask"
-        src="/static/images/dress-mask.png"
-        alt="dress-mask"
-      />
       <h1>Дресс-код</h1>
       <p>
         Для нас главное - ваше присутствие, но нам будет очень приятно, если вы

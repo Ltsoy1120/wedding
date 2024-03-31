@@ -37,7 +37,7 @@
         display: flex;
         align-items: center;
         cursor: pointer;
-        @include Typography($font-size-2, 400, $color-secondary-text);
+        @include Typography(20px, 400, $color-secondary-text);
       }
 
       .real-radio {
@@ -54,7 +54,7 @@
         height: 20px;
         border-radius: 50%;
         border: 2px solid #a69e8d;
-        margin-right: 10px;
+        margin-right: 20px;
         vertical-align: text-top;
       }
 

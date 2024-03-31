@@ -21,8 +21,8 @@ const Team = () => {
           </li>
           <li>
             <h2>Видеограф -</h2>
-            <a href="https://www.instagram.com/bumagaz?igsh=MWdyYXV4dzUzOGFveA==">
-              @videograf
+            <a href="https://www.instagram.com/losfilmprod?igsh=YmQwaGYzaDdodjFs">
+              @losfilmprod
             </a>
           </li>
           <li>
@@ -43,12 +43,12 @@ const Team = () => {
           +7(777)777-77-77
         </a>
         <span className="avatar"></span>
+        <img
+          className="frame"
+          src="/static/images/vensel-frame.svg"
+          alt="frame"
+        />
       </div>
-      <img
-        className="frame"
-        src="/static/images/vensel-frame.svg"
-        alt="frame"
-      />
     </div>
   )
 }

@@ -1,11 +1,11 @@
 @import "../../assets/scss/bundle.scss";
 
 .team-wrapper {
-  position: relative;
   margin-bottom: 50px;
 }
 
 .team {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;

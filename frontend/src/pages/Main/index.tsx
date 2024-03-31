@@ -30,10 +30,12 @@ const Main = () => {
         <p className="main__text">
           Будем счастливы окунуться вместе с вами <br />в атмосферу
           Венецианского бала.
-          <br />
-          <br />
-          Подробности ниже
         </p>
+        <img
+          className="main__arrows"
+          src="/static/images/arrows-down.png "
+          alt="arrows-down"
+        />
       </div>
     </div>
   )
