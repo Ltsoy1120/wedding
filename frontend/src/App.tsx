@@ -6,6 +6,7 @@ import DressCode from "./pages/DressCode"
 import Location from "./pages/Location"
 import Team from "./pages/Team"
 import "./App.scss"
+import SeeYou from "./pages/SeeYou"
 
 function App() {
   return (
@@ -45,16 +46,12 @@ function App() {
           />
         </div>
         <Program />
-        {/* <img
-          className="mask-gold"
-          src="/static/images/mask-gold.png"
-          alt="mask-gold"
-        /> */}
       </div>
       <DressCode />
       <Form />
       <Location />
       <Team />
+      <SeeYou />
     </div>
   )
 }

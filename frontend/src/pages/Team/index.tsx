@@ -43,11 +43,12 @@ const Team = () => {
           +7(777)777-77-77
         </a>
         <span className="avatar"></span>
-        <img
+        {/* <img
           className="frame"
           src="/static/images/vensel-frame.svg"
           alt="frame"
-        />
+        /> */}
+        <img src="/static/images/divider.svg" alt="divider" />
       </div>
     </div>
   )
