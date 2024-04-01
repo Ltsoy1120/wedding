@@ -24,6 +24,7 @@ const AdultsTable = ({ users, modalOpen }: AdultsTableProps) => {
             <TableRow>
               <TableCell>№</TableCell>
               <TableCell>Ф.И.О</TableCell>
+              <TableCell>Пара</TableCell>
               <TableCell>Дата подтверждения</TableCell>
               <TableCell></TableCell>
             </TableRow>
@@ -37,11 +38,9 @@ const AdultsTable = ({ users, modalOpen }: AdultsTableProps) => {
                 <TableCell component="th" scope="row">
                   {index + 1}
                 </TableCell>
-                <TableCell>
-                  <div className="cellBox">
-                    <p>{user.fullName}</p>
-                    <span>{user.pairName}</span>
-                  </div>
+                <TableCell>{user.fullName}</TableCell>
+                <TableCell style={{ color: "#bebebe", fontSize: "12px" }}>
+                  {user.pairName}
                 </TableCell>
                 <TableCell>{formattedDate(new Date(user.createdAt))}</TableCell>
                 <TableCell onClick={() => modalOpen(user)}>
