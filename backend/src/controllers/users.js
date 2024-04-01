@@ -58,6 +58,39 @@ export const getUsers = async (req, res) => {
   }
 }
 
+export const createUserByAdmin = async (req, res) => {
+  try {
+    console.log("req.body", req.body)
+    if (req.body.presense === "absent") {
+      const meAbsent = new User({
+        presense: req.body.presense,
+        fullName: req.body.myName
+      })
+      await meAbsent.save()
+    }
+    if (req.body.pairName) {
+      const me = new User({
+        presense: req.body.presense,
+        fullName: req.body.fullName,
+        pairName: req.body.pairName
+      })
+      await me.save()
+    }
+    if (req.body.age) {
+      const newChild = new User({
+        fullName: child.fullName,
+        age: child.age,
+        parent: req.body.parent
+      })
+      await newChild.save()
+    }
+
+    return res.json({ message: "Ваш ответ успешно отправлен" })
+  } catch (error) {
+    res.json({ message: "Произошла ошибка" })
+  }
+}
+
 export const deleteUser = async (req, res) => {
   const user = await User.findByIdAndDelete(req.params.id)
   try {

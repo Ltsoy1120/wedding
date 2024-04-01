@@ -1,11 +1,20 @@
 import { useState, useEffect } from "react"
-import { Box, Tab } from "@mui/material"
+import {
+  Box,
+  Tab,
+  Dialog,
+  DialogTitle,
+  DialogActions,
+  Button
+} from "@mui/material"
 import { TabContext, TabList, TabPanel } from "@mui/lab"
 import "./App.css"
 import ChildrenTable from "./components/ChildrenTable"
 import TeenagersTable from "./components/TeenagersTable"
 import AdultsTable from "./components/AdultsTable"
 import AbsentTable from "./components/AbsentTable"
+import NewUser from "./components/NewUser"
+import DatesInfo from "./components/DatesInfo"
 
 export interface User {
   presense?: string
@@ -17,47 +26,27 @@ export interface User {
   _id: string
 }
 
-export const formattedDate = (date: Date) => {
-  return date.toLocaleDateString("ru-RU", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric"
-  })
-}
-
 const API_URL = process.env.API_URL ?? "https://wedding-dv-api.vercel.app/"
 
 function App() {
-  const today = new Date()
-  const weddingDate = new Date("2024-06-01")
-  const differenceInTime = weddingDate.getTime() - today.getTime()
-  const differenceInDays = Math.ceil(differenceInTime / (1000 * 3600 * 24))
-  const formatDays = (days: number): string => {
-    const lastDigit = days % 10
-    const lastTwoDigits = days % 100
-
-    if (
-      (lastTwoDigits >= 11 && lastTwoDigits <= 14) ||
-      lastDigit === 0 ||
-      (lastDigit >= 5 && lastDigit <= 9)
-    ) {
-      return "дней"
-    } else if (lastDigit === 1) {
-      return "день"
-    } else {
-      return "дня"
-    }
-  }
   const [users, setUsers] = useState<User[]>([])
   const [adults, setAdults] = useState<User[]>([])
   const [teenagers, setTeenagers] = useState<User[]>([])
   const [children, setChildren] = useState<User[]>([])
   const [userAbsent, setUserAbsent] = useState<User[]>([])
+  console.log("users", users)
+  const [tabValue, setTabValue] = useState("1")
 
-  const [value, setValue] = useState("1")
+  const [open, setOpen] = useState(false)
+  const [userDelete, setUserDelete] = useState<User>()
+
+  const handleClickOpen = (user: User) => {
+    setUserDelete(user)
+    setOpen(true)
+  }
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue)
+    setTabValue(newValue)
   }
 
   useEffect(() => {
@@ -101,27 +90,17 @@ function App() {
       })
       .then(data => setUsers(data.users))
       .catch(error => console.error("Fetch error:", error))
+    setOpen(false)
   }
 
   return (
     <div className="App">
-      <h1>D & V</h1>
-      <div className="dates">
-        <p>
-          Дата торжества: <span>01 июня 2024г.</span>
-        </p>
-        <p>
-          Осталось:{" "}
-          <span>
-            {differenceInDays} {formatDays(differenceInDays)}
-          </span>
-        </p>
-        <p>
-          Сегодня: <span>{formattedDate(today)}</span>
-        </p>
-      </div>
+      <DatesInfo />
+
+      <NewUser tabValue={tabValue} />
+
       <Box sx={{ width: "100%", typography: "body1" }}>
-        <TabContext value={value}>
+        <TabContext value={tabValue}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <TabList onChange={handleChange} aria-label="lab API tabs example">
               <Tab label="Взрослые" value="1" />
@@ -131,19 +110,30 @@ function App() {
             </TabList>
           </Box>
           <TabPanel value="1">
-            <AdultsTable users={adults} deleteUser={deleteUser} />
+            <AdultsTable users={adults} modalOpen={handleClickOpen} />
           </TabPanel>
           <TabPanel value="2">
-            <TeenagersTable users={teenagers} deleteUser={deleteUser} />
+            <TeenagersTable users={teenagers} modalOpen={handleClickOpen} />
           </TabPanel>
           <TabPanel value="3">
-            <ChildrenTable users={children} deleteUser={deleteUser} />
+            <ChildrenTable users={children} modalOpen={handleClickOpen} />
           </TabPanel>
           <TabPanel value="4">
-            <AbsentTable users={userAbsent} deleteUser={deleteUser} />
+            <AbsentTable users={userAbsent} modalOpen={handleClickOpen} />
           </TabPanel>
         </TabContext>
       </Box>
+      {userDelete && (
+        <Dialog open={open} onClose={() => setOpen(false)}>
+          <DialogTitle>
+            {`Вы уверены, что хотите удалить ${userDelete.fullName}?`}
+          </DialogTitle>
+          <DialogActions>
+            <Button onClick={() => deleteUser(userDelete._id)}>Да</Button>
+            <Button onClick={() => setOpen(false)}>Отменить</Button>
+          </DialogActions>
+        </Dialog>
+      )}
     </div>
   )
 }

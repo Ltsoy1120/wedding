@@ -7,14 +7,15 @@ import {
   TableCell,
   Paper
 } from "@mui/material"
-import { formattedDate, User } from "../../App"
+import { User } from "../../App"
+import { formattedDate } from "../DatesInfo"
 
 interface TeenagersTableProps {
   users: User[]
-  deleteUser: (id: string) => void
+  modalOpen: (user: User) => void
 }
 
-const TeenagersTable = ({ users, deleteUser }: TeenagersTableProps) => {
+const TeenagersTable = ({ users, modalOpen }: TeenagersTableProps) => {
   return (
     <>
       <TableContainer component={Paper}>
@@ -44,7 +45,7 @@ const TeenagersTable = ({ users, deleteUser }: TeenagersTableProps) => {
                 </TableCell>
                 <TableCell>{user.age}</TableCell>
                 <TableCell>{formattedDate(new Date(user.createdAt))}</TableCell>
-                <TableCell onClick={() => deleteUser(user._id)}>
+                <TableCell onClick={() => modalOpen(user)}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"

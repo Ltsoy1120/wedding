@@ -33,7 +33,6 @@ const Form = () => {
   })
   const [message, setMessage] = useState<string>()
 
-  console.log(message)
   const onRadioClickHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     reset()
     const value = e.target.value
@@ -47,10 +46,6 @@ const Form = () => {
         hasChildren: false,
         children: [{ id: 1, fullName: "", age: null }]
       })
-      // setState(prev => ({
-      //   ...prev,
-      //   presense: value as Presense
-      // }))
     }
   }
 
