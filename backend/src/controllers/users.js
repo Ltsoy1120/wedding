@@ -72,7 +72,6 @@ export const createUserByAdmin = async (req, res) => {
 
     if (req.body.pairName) {
       const me = new User({
-        presense: req.body.presense,
         fullName: req.body.fullName,
         pairName: req.body.pairName
       })
@@ -93,7 +92,8 @@ export const createUserByAdmin = async (req, res) => {
     })
 
     await newUser.save()
-    return res.json({ message: "Гость успешно добавлен" })
+    res.send({ users, message: "Гость успешно добавлен!" })
+    // return res.json({ message: "Гость успешно добавлен" })
   } catch (error) {
     res.json({ message: "Произошла ошибка" })
   }
