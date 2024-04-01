@@ -1,4 +1,4 @@
-import { Button, Paper, TextField } from "@mui/material"
+import { Button, TextField } from "@mui/material"
 import { useState } from "react"
 
 interface NewUserProps {
@@ -101,7 +101,7 @@ const NewUser = ({ tabValue }: NewUserProps) => {
           label="Ф.И.О. *"
           variant="standard"
           name="fullName"
-          onChange={() => onChangeHandler}
+          onChange={onChangeHandler}
         />
       )}
 

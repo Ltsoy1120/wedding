@@ -59,6 +59,7 @@ export const getUsers = async (req, res) => {
 }
 
 export const createUserByAdmin = async (req, res) => {
+  console.log("createUserByAdmin")
   try {
     console.log("req.body", req.body)
     if (req.body.presense === "absent") {
@@ -68,6 +69,7 @@ export const createUserByAdmin = async (req, res) => {
       })
       await meAbsent.save()
     }
+
     if (req.body.pairName) {
       const me = new User({
         presense: req.body.presense,
@@ -76,6 +78,7 @@ export const createUserByAdmin = async (req, res) => {
       })
       await me.save()
     }
+
     if (req.body.age) {
       const newChild = new User({
         fullName: child.fullName,
@@ -85,7 +88,12 @@ export const createUserByAdmin = async (req, res) => {
       await newChild.save()
     }
 
-    return res.json({ message: "Ваш ответ успешно отправлен" })
+    const newUser = new User({
+      fullName: req.body.fullName
+    })
+
+    await newUser.save()
+    return res.json({ message: "Гость успешно добавлен" })
   } catch (error) {
     res.json({ message: "Произошла ошибка" })
   }
