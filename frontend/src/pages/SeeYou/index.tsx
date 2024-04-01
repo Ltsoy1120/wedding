@@ -35,25 +35,34 @@ const SeeYou = () => {
 
   const { days, hours, minutes, seconds } = timer
 
+  function getWordForm(number: number, wordForms: string[]) {
+    number = Math.abs(number) % 100
+    const n1 = number % 10
+    if (number > 10 && number < 20) return wordForms[2]
+    if (n1 > 1 && n1 < 5) return wordForms[1]
+    if (n1 === 1) return wordForms[0]
+    return wordForms[2]
+  }
+
   return (
     <div className="see-you">
       <h1>До встречи через</h1>
       <div className="timer">
         <div className="timer__item">
           <h3>{days}</h3>
-          <span>дней</span>
+          <span>{getWordForm(days, ["день", "дня", "дней"])}</span>
         </div>
         <div className="timer__item">
           <h3>{hours}</h3>
-          <span>часов</span>
+          <span>{getWordForm(hours, ["час", "часа", "часов"])}</span>
         </div>
         <div className="timer__item">
           <h3>{minutes}</h3>
-          <span>минут</span>
+          <span>{getWordForm(minutes, ["минута", "минуты", "минут"])}</span>
         </div>
         <div className="timer__item">
           <h3>{seconds}</h3>
-          <span>секунд</span>
+          <span>{getWordForm(seconds, ["секунда", "секунды", "секунд"])}</span>
         </div>
       </div>
       <img className="D&V" src="/static/images/D&V2.jpg" alt="D&V" />
