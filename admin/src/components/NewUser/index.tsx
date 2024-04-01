@@ -1,23 +1,31 @@
 import { Button, TextField } from "@mui/material"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { User } from "../../App"
 
 interface NewUserProps {
   tabValue: string
+  setUsers: React.Dispatch<React.SetStateAction<User[]>>
 }
 
-const NewUser = ({ tabValue }: NewUserProps) => {
+const NewUser = ({ tabValue, setUsers }: NewUserProps) => {
   const API_URL = process.env.API_URL ?? "https://wedding-dv-api.vercel.app/"
 
   const [state, setState] = useState({
-    presense: tabValue === "4" ? "absent" : "",
+    presense: "",
     fullName: "",
     age: "",
     pairName: "",
     parent: ""
   })
 
-  const [message, setMessage] = useState<string>()
-  console.log("message", message)
+  useEffect(() => {
+    if (tabValue === "4") {
+      setState(prev => ({
+        ...prev,
+        presense: "absent"
+      }))
+    }
+  }, [tabValue])
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -28,9 +36,10 @@ const NewUser = ({ tabValue }: NewUserProps) => {
     }))
   }
 
+  console.log("state", state)
+
   const onSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    console.log("state", state)
     fetch(`${API_URL}api/users/add`, {
       method: "POST",
       headers: {
@@ -44,7 +53,7 @@ const NewUser = ({ tabValue }: NewUserProps) => {
         }
         return response.json()
       })
-      .then(data => setMessage(data.message))
+      .then(data => setUsers(data.users))
       .catch(error => console.error("Fetch error:", error))
     reset()
   }
@@ -59,6 +68,21 @@ const NewUser = ({ tabValue }: NewUserProps) => {
     })
   }
 
+  const isDisabled = () => {
+    switch (tabValue) {
+      case "1":
+        return !state.fullName
+      case "2":
+        return !(state.fullName && state.age)
+      case "3":
+        return !(state.fullName && state.age)
+      case "4":
+        return !state.fullName
+      default:
+        break
+    }
+  }
+
   return (
     <div className="new-user">
       {tabValue === "1" && (
@@ -67,9 +91,16 @@ const NewUser = ({ tabValue }: NewUserProps) => {
             label="Ф.И.О. *"
             variant="standard"
             name="fullName"
+            value={state.fullName}
             onChange={onChangeHandler}
           />
-          <TextField label="Ф.И.О. пары " variant="standard" name="pairName" />
+          <TextField
+            label="Ф.И.О. пары "
+            variant="standard"
+            name="pairName"
+            value={state.pairName}
+            onChange={onChangeHandler}
+          />
         </>
       )}
 
@@ -79,18 +110,21 @@ const NewUser = ({ tabValue }: NewUserProps) => {
             label="Ф.И ребенка *"
             variant="standard"
             name="fullName"
+            value={state.fullName}
             onChange={onChangeHandler}
           />
           <TextField
             label="Родитель"
             variant="standard"
             name="parent"
+            value={state.parent}
             onChange={onChangeHandler}
           />
           <TextField
             label="Возраст *"
             variant="standard"
             name="age"
+            value={state.age}
             onChange={onChangeHandler}
           />
         </>
@@ -101,11 +135,16 @@ const NewUser = ({ tabValue }: NewUserProps) => {
           label="Ф.И.О. *"
           variant="standard"
           name="fullName"
+          value={state.fullName}
           onChange={onChangeHandler}
         />
       )}
 
-      <Button variant="contained" onClick={e => onSubmit(e)}>
+      <Button
+        variant="contained"
+        onClick={e => onSubmit(e)}
+        disabled={isDisabled()}
+      >
         Добавить
       </Button>
     </div>

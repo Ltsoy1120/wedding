@@ -97,7 +97,7 @@ function App() {
     <div className="App">
       <DatesInfo />
 
-      <NewUser tabValue={tabValue} />
+      <NewUser tabValue={tabValue} setUsers={setUsers} />
 
       <Box sx={{ width: "100%", typography: "body1" }}>
         <TabContext value={tabValue}>
