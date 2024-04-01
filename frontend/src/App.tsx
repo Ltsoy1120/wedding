@@ -45,11 +45,11 @@ function App() {
           />
         </div>
         <Program />
-        <img
+        {/* <img
           className="mask-gold"
           src="/static/images/mask-gold.png"
           alt="mask-gold"
-        />
+        /> */}
       </div>
       <DressCode />
       <Form />

@@ -37,6 +37,11 @@ const Program = () => {
           Время вкусной еды, танцев и развлечений
         </p>
       </div>
+      <img
+        className="mask-gold"
+        src="/static/images/mask-gold.png"
+        alt="mask-gold"
+      />
     </div>
   )
 }
