@@ -81,8 +81,8 @@ export const createUserByAdmin = async (req, res) => {
 
     if (req.body.age) {
       const newChild = new User({
-        fullName: child.fullName,
-        age: child.age,
+        fullName: req.body.fullName,
+        age: req.body.age,
         parent: req.body.parent
       })
       await newChild.save()
