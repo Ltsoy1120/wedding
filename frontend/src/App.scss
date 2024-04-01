@@ -66,11 +66,11 @@
     position: absolute;
     bottom: -450px;
 
-    animation: fadeOut 5s ease-in-out forwards;
+    animation: fadeMaskOut 5s ease-in-out forwards;
     animation-delay: 8s;
   }
 
-  @keyframes fadeOut {
+  @keyframes fadeMaskOut {
     to {
       opacity: 0;
     }
