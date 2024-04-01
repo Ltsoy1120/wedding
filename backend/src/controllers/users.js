@@ -68,32 +68,29 @@ export const createUserByAdmin = async (req, res) => {
         fullName: req.body.myName
       })
       await meAbsent.save()
-    }
-
-    if (req.body.pairName) {
+    } else if (req.body.pairName) {
       const me = new User({
         fullName: req.body.fullName,
         pairName: req.body.pairName
       })
       await me.save()
-    }
-
-    if (req.body.age) {
+    } else if (req.body.age) {
       const newChild = new User({
         fullName: req.body.fullName,
         age: req.body.age,
         parent: req.body.parent
       })
       await newChild.save()
+    } else {
+      const newUser = new User({
+        fullName: req.body.fullName
+      })
+      await newUser.save()
     }
 
-    const newUser = new User({
-      fullName: req.body.fullName
-    })
-
-    await newUser.save()
-    res.send({ users, message: "Гость успешно добавлен!" })
-    // return res.json({ message: "Гость успешно добавлен" })
+    const users = await User.find()
+    // res.send({ users, message: "Гость успешно добавлен!" })
+    return res.json({ users, message: "Гость успешно добавлен" })
   } catch (error) {
     res.json({ message: "Произошла ошибка" })
   }
