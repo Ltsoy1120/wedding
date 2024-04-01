@@ -63,11 +63,11 @@ export const createUserByAdmin = async (req, res) => {
   try {
     console.log("req.body", req.body)
     if (req.body.presense === "absent") {
-      const meAbsent = new User({
+      const userAbsent = new User({
         presense: req.body.presense,
-        fullName: req.body.myName
+        fullName: req.body.fullName
       })
-      await meAbsent.save()
+      await userAbsent.save()
     } else if (req.body.pairName) {
       const me = new User({
         fullName: req.body.fullName,
