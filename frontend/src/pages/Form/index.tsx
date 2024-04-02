@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import Loader from "../../components/Loader"
 import Modal from "../../components/Modal"
 import "./style.scss"
 
@@ -34,11 +35,14 @@ const Form = () => {
   })
   const [message, setMessage] = useState<string>()
 
+  const [isLoader, setLoader] = useState<boolean>(false)
   const [showModal, setShowModal] = useState<boolean>(false)
-  console.log("showModal", showModal)
 
   useEffect(() => {
-    message && setShowModal(true)
+    if (message) {
+      setShowModal(true)
+      setLoader(false)
+    }
   }, [message])
 
   const onRadioClickHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -113,11 +117,16 @@ const Form = () => {
       children: [{ id: 1, fullName: "", age: null }]
     })
   }
-  console.log("state==========", state)
+
+  const handleClose = () => {
+    setMessage("")
+    setShowModal(false)
+  }
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log("state", state)
+    setLoader(true)
     fetch(`${API_URL}api/users/new`, {
       method: "POST",
       headers: {
@@ -263,8 +272,9 @@ const Form = () => {
       <div className="container">
         <img src="/static/images/divider.svg" alt="divider" />
       </div>
+      {isLoader && <Loader />}
       {showModal && (
-        <Modal close={() => setShowModal(false)} size="90vw">
+        <Modal close={handleClose} size="90vw">
           <div>
             <h3>{message}</h3>
           </div>
