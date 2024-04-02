@@ -34,7 +34,6 @@ const Form = () => {
     children: [{ id: 1, fullName: "", age: null }]
   })
   const [message, setMessage] = useState<string>()
-
   const [isLoader, setLoader] = useState<boolean>(false)
   const [showModal, setShowModal] = useState<boolean>(false)
 
@@ -162,6 +161,7 @@ const Form = () => {
               name="presense"
               value="alone"
               onChange={onRadioClickHandler}
+              checked={state.presense === "alone"}
             />
             <span className="custom-radio"></span>Я с удовольствием приду
           </label>
@@ -172,6 +172,7 @@ const Form = () => {
               name="presense"
               value="together"
               onChange={onRadioClickHandler}
+              checked={state.presense === "together"}
             />
             <span className="custom-radio"></span>Буду не один / одна
           </label>
@@ -182,6 +183,7 @@ const Form = () => {
               name="presense"
               value="absent"
               onChange={onRadioClickHandler}
+              checked={state.presense === "absent"}
             />
             <span className="custom-radio"></span>
             <span className="label-text">
