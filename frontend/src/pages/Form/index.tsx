@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import Modal from "../../components/Modal"
 import "./style.scss"
 
 interface FormData {
@@ -32,6 +33,13 @@ const Form = () => {
     children: [{ id: 1, fullName: "", age: null }]
   })
   const [message, setMessage] = useState<string>()
+
+  const [showModal, setShowModal] = useState<boolean>(false)
+  console.log("showModal", showModal)
+
+  useEffect(() => {
+    message && setShowModal(true)
+  }, [message])
 
   const onRadioClickHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     reset()
@@ -255,6 +263,13 @@ const Form = () => {
       <div className="container">
         <img src="/static/images/divider.svg" alt="divider" />
       </div>
+      {showModal && (
+        <Modal close={() => setShowModal(false)} size="90vw">
+          <div>
+            <h3>{message}</h3>
+          </div>
+        </Modal>
+      )}
     </div>
   )
 }

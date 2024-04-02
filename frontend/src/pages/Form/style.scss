@@ -206,7 +206,7 @@
       text-align: center;
       box-sizing: border-box;
       cursor: pointer;
-      @include Typography($font-size-3, 600, white);
+      @include Typography($font-size-3, 600, $color-primary-text);
       box-shadow: 1px 1px 6px #382201;
 
       &:hover {
