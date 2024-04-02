@@ -136,7 +136,7 @@ const Form = () => {
           <br /> Будем ждать ответ до:
         </h2>
       </div>
-      <p className="date">20.05.2024</p>
+      <h2 className="date">20.05.2024</h2>
       <form onSubmit={onSubmit}>
         <div className="radio-block">
           <h2>Выберите ваш вариант:</h2>

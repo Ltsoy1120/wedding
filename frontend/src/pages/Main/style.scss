@@ -73,7 +73,6 @@
   }
 
   &__date {
-    @include Typography($font-size-1, 400, $color-secondary-text);
     margin-bottom: 20px;
 
     opacity: 0;
@@ -82,8 +81,6 @@
   }
 
   h2 {
-    @include Typography($font-size-1, 500, $color-primary-text);
-    text-transform: uppercase;
     margin-bottom: 20px;
 
     opacity: 0;
@@ -92,13 +89,10 @@
   }
 
   &__text {
-    text-align: center;
-    @include Typography($font-size-2, 400, $color-secondary-text);
-
     opacity: 0;
     animation: fadeIn 3s ease-in-out forwards;
     animation-delay: 12s;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   &__arrows {

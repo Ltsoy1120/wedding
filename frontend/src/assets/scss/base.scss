@@ -22,7 +22,7 @@ h1 {
 }
 
 h2 {
-  @include Typography($font-size-2, 600, $color-primary-text);
+  @include Typography($font-size-1, 500, $color-primary-text);
   line-height: 26px;
   text-transform: uppercase;
   text-align: center;
@@ -30,7 +30,7 @@ h2 {
 
 p {
   text-align: center;
-  @include Typography($font-size-3, 400, $color-secondary-text);
+  @include Typography($font-size-2, 400, $color-secondary-text);
 }
 
 /* UX */
