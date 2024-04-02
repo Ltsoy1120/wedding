@@ -66,6 +66,7 @@
   }
 
   &__title {
+    margin-bottom: 20px;
     opacity: 0;
     animation: scaleAndMoveUp 7s ease-in-out forwards;
     animation-delay: 5s;
@@ -73,7 +74,7 @@
 
   &__date {
     @include Typography($font-size-1, 400, $color-secondary-text);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
     opacity: 0;
     animation: fadeIn 3s ease-in-out forwards;
@@ -81,9 +82,9 @@
   }
 
   h2 {
-    @include Typography($font-size-1, 400, $color-secondary-text);
+    @include Typography(20px, 400, $color-secondary-text);
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
     opacity: 0;
     animation: fadeIn 3s ease-in-out forwards;
