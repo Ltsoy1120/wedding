@@ -23,7 +23,9 @@
     margin-bottom: 50px;
 
     h2 {
-      @include Typography($font-size-1, 400, $color-secondary-text);
+      font-family: "Imperial Script", cursive;
+      font-weight: 400;
+      font-style: normal;
     }
 
     .radio-block {
