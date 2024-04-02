@@ -16,7 +16,7 @@ function App() {
         <div className="bg-program-wrapper">
           <img
             className="program-bg"
-            src="/static/images/program-bg1.png"
+            src="/static/images/program-bg.png"
             alt="program-bg"
           />
           <img

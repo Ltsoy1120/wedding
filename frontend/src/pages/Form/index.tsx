@@ -130,7 +130,7 @@ const Form = () => {
 
   return (
     <div className="form">
-      <h2 className="title imperial">
+      <h2 className="title">
         Подтвердите, пожалуйста свое присутствие на торжестве!
         <br /> Будем ждать ответ до:
       </h2>
