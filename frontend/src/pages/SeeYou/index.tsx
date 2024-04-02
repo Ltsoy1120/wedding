@@ -10,7 +10,7 @@ const SeeYou = () => {
   })
   function updateTimer() {
     const currentTime = new Date()
-    const weddingTime = new Date("2024-06-01T17:00:00Z")
+    const weddingTime = new Date("2024-06-01T16:30:00Z")
 
     const timeLeft = weddingTime.getTime() - currentTime.getTime()
 

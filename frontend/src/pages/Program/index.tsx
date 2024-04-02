@@ -19,13 +19,13 @@ const Program = () => {
       <img className="vensel" src="/static/images/vensel.png" alt="vensel" />
 
       <div className="program-block">
-        <h2>17.30 </h2>
+        <h2>17:30 </h2>
         <h2>Фотосессия + Фуршет</h2>
         <p>Давайте вместе запечатлеем это событие</p>
       </div>
       <img className="vensel" src="/static/images/vensel.png" alt="vensel" />
       <div className="program-block">
-        <h2>18.00</h2>
+        <h2>18:00</h2>
         <h2>Банкет</h2>
         <p>Время вкусной еды, танцев и развлечений</p>
       </div>
