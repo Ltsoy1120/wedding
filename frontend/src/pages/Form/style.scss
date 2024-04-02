@@ -4,6 +4,7 @@
   margin: 50px 20px;
 
   .title {
+    text-transform: capitalize;
     margin-bottom: 20px;
   }
 
@@ -23,9 +24,7 @@
     margin-bottom: 50px;
 
     h2 {
-      font-family: "Imperial Script", cursive;
-      font-weight: 400;
-      font-style: normal;
+      @include Typography($font-size-1, 400, $color-secondary-text);
     }
 
     .radio-block {

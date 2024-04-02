@@ -130,12 +130,10 @@ const Form = () => {
 
   return (
     <div className="form">
-      <div className="container">
-        <h2 className="title">
-          Подтвердите, пожалуйста свое присутствие на торжестве!
-          <br /> Будем ждать ответ до:
-        </h2>
-      </div>
+      <h2 className="title">
+        Подтвердите, пожалуйста свое присутствие на торжестве!
+        <br /> Будем ждать ответ до:
+      </h2>
       <h2 className="date">20.05.2024</h2>
       <form onSubmit={onSubmit}>
         <div className="radio-block">
