@@ -23,10 +23,7 @@ const Main = () => {
         <img className="main__title" src="/static/images/DV.png" alt="DV" />
 
         <p className="main__date">01.06.2024</p>
-        <h2>
-          ПРИГЛАШАЕМ ВАС <br />
-          НА НАШУ СВАДЬБУ
-        </h2>
+        <h2>ПРИГЛАШАЕМ ВАС НА НАШУ СВАДЬБУ</h2>
         <p className="main__text">
           Будем счастливы окунуться вместе с вами <br />в атмосферу
           Венецианского бала.

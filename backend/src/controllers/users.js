@@ -89,7 +89,6 @@ export const createUserByAdmin = async (req, res) => {
     }
 
     const users = await User.find()
-    // res.send({ users, message: "Гость успешно добавлен!" })
     return res.json({ users, message: "Гость успешно добавлен" })
   } catch (error) {
     res.json({ message: "Произошла ошибка" })
