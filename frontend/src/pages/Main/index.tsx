@@ -19,7 +19,7 @@ const Main = () => {
         />
         <img className="spark" src="/static/images/spark.png" alt="spark" />
       </div>
-      <div className="main__context">
+      <div className="main__context container">
         <img className="main__title" src="/static/images/DV.png" alt="DV" />
 
         <h2 className="main__date">01.06.2024</h2>
