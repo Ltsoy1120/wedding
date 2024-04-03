@@ -6,7 +6,7 @@ const Main = () => {
       <img className="main__photo" src="/static/images/dv-photo.jpg" alt="dv" />
       <img
         className="wedding-day"
-        src="/static/images/wedding-day.svg"
+        src="/static/images/wedding-day.png"
         alt="wedding-day"
       />
 
