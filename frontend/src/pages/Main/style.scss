@@ -16,14 +16,14 @@
     width: 100%;
     height: 100svh;
 
-    animation: fadeOut 5s ease-in-out forwards;
-    animation-delay: 5s;
+    animation: fadeOut 10s ease-in-out forwards;
+    // animation-delay: 2s;
   }
 
   .wedding-day {
     position: absolute;
 
-    animation: fadeInOut 10s ease-in-out forwards;
+    animation: fadeInOut 8s ease-in-out forwards;
   }
 
   .bg-top-wrapper {
