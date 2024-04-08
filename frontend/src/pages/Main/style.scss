@@ -64,11 +64,15 @@
   }
 
   &__title {
-    min-height: 40svh;
     margin-bottom: 20px;
     opacity: 0;
     animation: scaleAndMoveUp 7s ease-in-out forwards;
     animation-delay: 5s;
+
+    @media (orientation: landscape) {
+      width: auto;
+      max-height: 40svh;
+    }
   }
 
   &__date {
