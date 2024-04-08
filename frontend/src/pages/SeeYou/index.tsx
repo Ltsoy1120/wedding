@@ -64,7 +64,7 @@ const SeeYou = () => {
           <span>{getWordForm(seconds, ["секунда", "секунды", "секунд"])}</span>
         </div>
       </div>
-      <img className="D&V" src="/static/images/D&V.jpg" alt="D&V" />
+      <img src="/static/images/D&V.jpg" alt="D&V" />
     </div>
   )
 }

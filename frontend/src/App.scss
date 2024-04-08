@@ -7,13 +7,8 @@
 
   .bg-program-wrapper {
     position: relative;
-
     z-index: 1;
     width: 100%;
-
-    opacity: 0;
-    animation: fadeIn 5s ease-in-out forwards;
-    animation-delay: 9s;
 
     @media (orientation: landscape) {
       top: 0;
@@ -22,6 +17,16 @@
     /* Для вертикальной ориентации */
     @media (orientation: portrait) {
       top: -20vh;
+      opacity: 0;
+      animation: fadeIn 5s ease-in-out forwards;
+      animation-delay: 9s;
+    }
+
+    .program-bg {
+      @media (orientation: landscape) {
+        height: 1000px;
+        object-fit: cover;
+      }
     }
 
     .mask-bottom {
