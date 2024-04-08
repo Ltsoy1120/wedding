@@ -38,16 +38,10 @@ const Team = () => {
           связанные со свадьбой в день торжества, <br />
           на них ответит наш координатор
         </p>
-        <h2>ИМЯ</h2>
-        <a className="phone" href="tel:+77777777777">
-          +7(777)777-77-77
+        <h2>Залина</h2>
+        <a className="phone" href="tel:+77017158858">
+          +7 (701) 715-88-58
         </a>
-        <span className="avatar"></span>
-        {/* <img
-          className="frame"
-          src="/static/images/vensel-frame.svg"
-          alt="frame"
-        /> */}
         <img src="/static/images/divider.svg" alt="divider" />
       </div>
     </div>

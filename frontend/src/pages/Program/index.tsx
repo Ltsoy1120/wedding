@@ -1,4 +1,3 @@
-import React from "react"
 import "./style.scss"
 
 const Program = () => {
@@ -29,11 +28,6 @@ const Program = () => {
         <h2>Банкет</h2>
         <p>Время вкусной еды, танцев и развлечений</p>
       </div>
-      <img
-        className="mask-gold"
-        src="/static/images/mask-gold.png"
-        alt="mask-gold"
-      />
     </div>
   )
 }

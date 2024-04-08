@@ -271,9 +271,7 @@ const Form = () => {
           Отправить
         </button>
       </form>
-      <div className="container">
-        <img src="/static/images/divider.svg" alt="divider" />
-      </div>
+      <img src="/static/images/divider.svg" alt="divider" />
       {isLoader && <Loader />}
       {showModal && (
         <Modal close={handleClose} size="90vw">

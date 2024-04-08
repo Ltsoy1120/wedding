@@ -2,6 +2,7 @@
 
 .team-wrapper {
   margin-bottom: 50px;
+  width: 100%;
 }
 
 .team {
@@ -50,5 +51,6 @@
 }
 .phone {
   cursor: pointer;
-  @include Typography(18px, 600, $color-primary-text);
+  margin-bottom: 40px;
+  @include Typography(20px, 600, $color-primary-text);
 }

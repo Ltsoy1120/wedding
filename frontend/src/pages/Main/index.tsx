@@ -1,6 +1,11 @@
 import "./style.scss"
 
 const Main = () => {
+  const isLandscape = window.innerWidth > window.innerHeight
+  console.log(window.innerWidth)
+  console.log(window.innerHeight)
+  console.log(isLandscape)
+
   return (
     <div className="main">
       <img className="main__photo" src="/static/images/dv-photo.jpg" alt="dv" />
@@ -10,15 +15,21 @@ const Main = () => {
         alt="wedding-day"
       />
 
-      <div className="bg-top-wrapper">
-        <img className="bg-top" src="/static/images/bg-top.png" alt="bg-top" />
-        <img
-          className="mask-top"
-          src="/static/images/mask-top.png"
-          alt="mask-top"
-        />
-        <img className="spark" src="/static/images/spark.png" alt="spark" />
-      </div>
+      {!isLandscape && (
+        <div className="bg-top-wrapper">
+          <img
+            className="bg-top"
+            src="/static/images/bg-top.png"
+            alt="bg-top"
+          />
+          <img
+            className="mask-top"
+            src="/static/images/mask-top.png"
+            alt="mask-top"
+          />
+          <img className="spark" src="/static/images/spark.png" alt="spark" />
+        </div>
+      )}
       <div className="main__context container">
         <img className="main__title" src="/static/images/DV.png" alt="DV" />
 

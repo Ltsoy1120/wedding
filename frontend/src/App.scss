@@ -7,13 +7,22 @@
 
   .bg-program-wrapper {
     position: relative;
-    top: -20vh;
+
     z-index: 1;
     width: 100%;
 
     opacity: 0;
     animation: fadeIn 5s ease-in-out forwards;
     animation-delay: 9s;
+
+    @media (orientation: landscape) {
+      top: 0;
+    }
+
+    /* Для вертикальной ориентации */
+    @media (orientation: portrait) {
+      top: -20vh;
+    }
 
     .mask-bottom {
       width: 70%;
@@ -64,7 +73,7 @@
 
   .mask-gold {
     position: absolute;
-    bottom: -450px;
+    bottom: -16%;
 
     animation: fadeMaskOut 5s ease-in-out forwards;
     animation-delay: 8s;
