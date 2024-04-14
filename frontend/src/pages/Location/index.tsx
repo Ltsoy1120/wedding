@@ -16,7 +16,7 @@ const Location = () => {
           src="static/images/eleven-logo.jpg"
           alt="eleven-logo"
         />
-        <h2 className="address">ул.Арайлы 16</h2>
+        <h2 className="address">г.Алматы, ул.Арайлы 16</h2>
 
         <a
           className="twogis-link"
