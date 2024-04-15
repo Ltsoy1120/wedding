@@ -38,6 +38,7 @@ export const createUser = async (req, res) => {
             age: child.age,
             parent: req.body.myName ?? req.body.pairName
           })
+          console.log("newChild", newChild)
           await newChild.save()
         })
       }
