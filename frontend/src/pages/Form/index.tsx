@@ -254,7 +254,7 @@ const Form = () => {
                       >
                         +
                       </button>
-                      {index > 1 && (
+                      {index !== 0 && (
                         <button
                           type="button"
                           className="delete-btn"
