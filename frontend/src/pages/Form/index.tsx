@@ -117,7 +117,7 @@ const Form = () => {
                 name === "age"
                   ? filteredValue === ""
                     ? null
-                    : Number(value)
+                    : Number(filteredValue)
                   : value
             }
           : child
