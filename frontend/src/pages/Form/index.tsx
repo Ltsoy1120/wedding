@@ -72,7 +72,7 @@ const Form = () => {
   const onCheckboxClickHandler = () => {
     setState(prev => ({
       ...prev,
-      hasChildren: !state.children
+      hasChildren: !state.hasChildren
     }))
   }
 
@@ -85,7 +85,13 @@ const Form = () => {
     setState(prev => ({
       ...prev,
       children: prev.children.map(child =>
-        child.id === childId ? { ...child, [name]: value } : child
+        child.id === childId
+          ? {
+              ...child,
+              [name]:
+                name === "age" ? (value === "" ? null : Number(value)) : value
+            }
+          : child
       )
     }))
   }
@@ -125,18 +131,25 @@ const Form = () => {
   const isDisabled = () => {
     switch (state.presense) {
       case "absent":
-        return state.myName
       case "alone":
-        return state.myName
+        return !state.myName
+
       case "together":
-        return (
+        return !(
           state.myName &&
-          (state.pairName || (state.hasChildren && state.children.length > 0))
+          (state.pairName ||
+            (state.hasChildren &&
+              state.children.every(
+                child => child.fullName && child.age !== null
+              )))
         )
       default:
-        break
+        return true
     }
   }
+
+  console.log("isDisabled", isDisabled())
+  console.log("state", state)
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -255,7 +268,7 @@ const Form = () => {
                         onChange={e => onChangeChildHandler(e, child.id)}
                       />
                       <input
-                        placeholder="Возраст"
+                        placeholder="Возраст (лет)"
                         type="number"
                         className="child__age"
                         required
@@ -285,7 +298,7 @@ const Form = () => {
             )}
           </div>
         )}
-        <button disabled={!isDisabled()} type="submit">
+        <button disabled={isDisabled()} type="submit">
           Отправить
         </button>
       </form>
