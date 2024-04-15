@@ -31,7 +31,7 @@ export const createUser = async (req, res) => {
       })
       await pair.save()
 
-      if (req.body.hasChildren && req.body.children.length > 0) {
+      if (req.body.hasChildren) {
         req.body.children.map(async child => {
           const newChild = new User({
             fullName: child.fullName,
