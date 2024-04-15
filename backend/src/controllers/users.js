@@ -25,11 +25,13 @@ export const createUser = async (req, res) => {
       })
       await me.save()
 
-      const pair = new User({
-        fullName: req.body.pairName,
-        pairName: req.body.myName
-      })
-      await pair.save()
+      if (req.body.pairName) {
+        const pair = new User({
+          fullName: req.body.pairName,
+          pairName: req.body.myName
+        })
+        await pair.save()
+      }
 
       if (req.body.hasChildren) {
         req.body.children.map(async child => {
@@ -38,7 +40,6 @@ export const createUser = async (req, res) => {
             age: child.age,
             parent: req.body.myName ?? req.body.pairName
           })
-          console.log("newChild", newChild)
           await newChild.save()
         })
       }
