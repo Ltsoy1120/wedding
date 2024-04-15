@@ -72,7 +72,7 @@ const Form = () => {
   const onCheckboxClickHandler = () => {
     setState(prev => ({
       ...prev,
-      hasChildren: true
+      hasChildren: !state.children
     }))
   }
 
@@ -120,6 +120,22 @@ const Form = () => {
   const handleClose = () => {
     setMessage("")
     setShowModal(false)
+  }
+
+  const isDisabled = () => {
+    switch (state.presense) {
+      case "absent":
+        return state.myName
+      case "alone":
+        return state.myName
+      case "together":
+        return (
+          state.myName &&
+          (state.pairName || (state.hasChildren && state.children.length > 0))
+        )
+      default:
+        break
+    }
   }
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -269,7 +285,7 @@ const Form = () => {
             )}
           </div>
         )}
-        <button disabled={!state.myName} type="submit">
+        <button disabled={!isDisabled()} type="submit">
           Отправить
         </button>
       </form>
