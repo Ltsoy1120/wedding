@@ -55,7 +55,7 @@ const Form = () => {
   }, [state.hasChildren])
 
   useEffect(() => {
-    if (state.children) {
+    if (state.hasChildren && state.children) {
       const hasErrors = state.children.some(
         child => !child.fullName || child.age === null
       )
