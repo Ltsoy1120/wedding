@@ -118,7 +118,7 @@ const Form = () => {
                   ? filteredValue === ""
                     ? null
                     : Number(filteredValue)
-                  : value
+                  : filteredValue
             }
           : child
       )
