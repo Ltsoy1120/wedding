@@ -293,6 +293,7 @@ const Form = () => {
                           name="fullName"
                           value={child.fullName}
                           onChange={e => onChangeChildHandler(e, child.id)}
+                          autoFocus
                         />
                         <input
                           placeholder="Возраст (лет)"
