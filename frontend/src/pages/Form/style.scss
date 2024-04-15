@@ -117,6 +117,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
+
         &__name {
           flex-grow: 1;
         }
@@ -153,6 +154,12 @@
             width: 16px;
           }
         }
+      }
+
+      .error {
+        color: red;
+        font-size: 14px;
+        margin-left: 20px;
       }
 
       /* checkbox */

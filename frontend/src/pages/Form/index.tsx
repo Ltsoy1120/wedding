@@ -36,6 +36,7 @@ const Form = () => {
   const [message, setMessage] = useState<string>()
   const [isLoader, setLoader] = useState<boolean>(false)
   const [showModal, setShowModal] = useState<boolean>(false)
+  const [error, setError] = useState<boolean>(false)
 
   useEffect(() => {
     if (message) {
@@ -43,6 +44,24 @@ const Form = () => {
       setLoader(false)
     }
   }, [message])
+
+  useEffect(() => {
+    if (!state.hasChildren) {
+      setState(prev => ({
+        ...prev,
+        children: [{ id: 1, fullName: "", age: null }]
+      }))
+    }
+  }, [state.hasChildren])
+
+  useEffect(() => {
+    if (state.children) {
+      const hasErrors = state.children.some(
+        child => !child.fullName || child.age === null
+      )
+      setError(hasErrors)
+    }
+  }, [state.children])
 
   const onRadioClickHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     reset()
@@ -81,6 +100,10 @@ const Form = () => {
     childId: number
   ) => {
     const { name, value } = e.target
+
+    if (name === "age" && value !== "" && !/^\d+$/.test(value)) {
+      return
+    }
 
     setState(prev => ({
       ...prev,
@@ -148,7 +171,7 @@ const Form = () => {
     }
   }
 
-  console.log("isDisabled", isDisabled())
+  console.log("error", error)
   console.log("state", state)
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -232,6 +255,9 @@ const Form = () => {
                 value={state.myName}
                 onChange={onChangeHandler}
               />
+              {!state.myName && (
+                <div className="error">Поле не может быть пустым</div>
+              )}
             </div>
             {state.presense === "together" && (
               <div className="together-block">
@@ -255,50 +281,56 @@ const Form = () => {
                   <span className="custom-checkbox"></span>С нами будут дети
                 </label>
 
-                {state.hasChildren &&
-                  state.children.map((child, index) => (
-                    <div key={index} className="child">
-                      <span>{index + 1}</span>
-                      <input
-                        placeholder="Фамилия Имя"
-                        className="child__name"
-                        required
-                        name="fullName"
-                        value={child.fullName}
-                        onChange={e => onChangeChildHandler(e, child.id)}
-                      />
-                      <input
-                        placeholder="Возраст (лет)"
-                        type="number"
-                        className="child__age"
-                        required
-                        name="age"
-                        value={child.age ?? ""}
-                        onChange={e => onChangeChildHandler(e, child.id)}
-                      />
-                      <button
-                        type="button"
-                        className="plus-btn"
-                        onClick={addChild}
-                      >
-                        +
-                      </button>
-                      {index !== 0 && (
+                {state.hasChildren && (
+                  <>
+                    {state.children.map((child, index) => (
+                      <div key={index} className="child">
+                        <span>{index + 1}</span>
+                        <input
+                          placeholder="Фамилия Имя"
+                          className="child__name"
+                          required
+                          name="fullName"
+                          value={child.fullName}
+                          onChange={e => onChangeChildHandler(e, child.id)}
+                        />
+                        <input
+                          placeholder="Возраст (лет)"
+                          type="number"
+                          className="child__age"
+                          required
+                          name="age"
+                          value={child.age ?? ""}
+                          onChange={e => onChangeChildHandler(e, child.id)}
+                        />
                         <button
                           type="button"
-                          className="delete-btn"
-                          onClick={() => deleteChild(child.id)}
+                          className="plus-btn"
+                          onClick={addChild}
                         >
-                          <img src="static/images/delete.png" alt="delete" />
+                          +
                         </button>
-                      )}
-                    </div>
-                  ))}
+                        {index !== 0 && (
+                          <button
+                            type="button"
+                            className="delete-btn"
+                            onClick={() => deleteChild(child.id)}
+                          >
+                            <img src="static/images/delete.png" alt="delete" />
+                          </button>
+                        )}
+                      </div>
+                    ))}
+                    {error && (
+                      <div className="error">Поля не могут быть пустыми</div>
+                    )}
+                  </>
+                )}
               </div>
             )}
           </div>
         )}
-        <button disabled={isDisabled()} type="submit">
+        <button disabled={error || isDisabled()} type="submit">
           Отправить
         </button>
       </form>
