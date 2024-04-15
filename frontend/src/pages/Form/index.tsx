@@ -101,11 +101,16 @@ const Form = () => {
   ) => {
     const { name, value } = e.target
 
-    const filteredValue =
-      name === "age"
-        ? value.replace(/\D/g, "")
-        : value.replace(/[^A-Za-zА-Яа-яЁё\s-]/g, "")
+    let filteredValue = value
 
+    // Фильтрация ввода для поля возраста (допускаются только цифры) и для поля имени (допускаются буквы, пробелы и дефисы)
+    if (name === "age") {
+      filteredValue = value.replace(/\D/g, "")
+    } else if (name === "fullName") {
+      filteredValue = value.replace(/[^A-Za-zА-Яа-яЁё\s-]/g, "")
+    }
+
+    // Если ввод не пустой, обновляем состояние
     if (filteredValue !== "") {
       setState(prev => ({
         ...prev,
@@ -119,6 +124,7 @@ const Form = () => {
         )
       }))
     } else {
+      // Если ввод пустой, ничего не делаем
       return
     }
   }
