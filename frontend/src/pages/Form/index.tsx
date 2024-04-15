@@ -254,7 +254,7 @@ const Form = () => {
                       >
                         +
                       </button>
-                      {state.children.length > 1 && (
+                      {index > 1 && (
                         <button
                           type="button"
                           className="delete-btn"
