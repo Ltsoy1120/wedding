@@ -101,28 +101,23 @@ const Form = () => {
   ) => {
     const { name, value } = e.target
 
-    const filteredValue = name === "age" ? value.replace(/[^0-9]/g, "") : value
+    const filteredValue = name === "age" ? value.replace(/\D/g, "") : value
 
-    if (name === "age" && filteredValue !== "" && !/^\d+$/.test(value)) {
+    if (name === "age" && filteredValue !== "") {
+      setState(prev => ({
+        ...prev,
+        children: prev.children.map(child =>
+          child.id === childId
+            ? {
+                ...child,
+                [name]: Number(filteredValue)
+              }
+            : child
+        )
+      }))
+    } else {
       return
     }
-
-    setState(prev => ({
-      ...prev,
-      children: prev.children.map(child =>
-        child.id === childId
-          ? {
-              ...child,
-              [name]:
-                name === "age"
-                  ? filteredValue === ""
-                    ? null
-                    : Number(filteredValue)
-                  : filteredValue
-            }
-          : child
-      )
-    }))
   }
 
   const addChild = () => {
