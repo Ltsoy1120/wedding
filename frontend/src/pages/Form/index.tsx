@@ -101,32 +101,28 @@ const Form = () => {
   ) => {
     const { name, value } = e.target
 
-    let filteredValue = value
+    const filteredValue = name === "age" ? value.replace(/[^0-9]/g, "") : value
 
-    // Фильтрация ввода для поля возраста (допускаются только цифры) и для поля имени (допускаются буквы, пробелы и дефисы)
-    if (name === "age") {
-      filteredValue = value.replace(/\D/g, "")
-    } else if (name === "fullName") {
-      filteredValue = value.replace(/[^A-Za-zА-Яа-яЁё\s-]/g, "")
-    }
-
-    // Если ввод не пустой, обновляем состояние
-    if (filteredValue !== "") {
-      setState(prev => ({
-        ...prev,
-        children: prev.children.map(child =>
-          child.id === childId
-            ? {
-                ...child,
-                [name]: name === "age" ? Number(filteredValue) : filteredValue
-              }
-            : child
-        )
-      }))
-    } else {
-      // Если ввод пустой, ничего не делаем
+    if (name === "age" && filteredValue !== "" && !/^\d+$/.test(value)) {
       return
     }
+
+    setState(prev => ({
+      ...prev,
+      children: prev.children.map(child =>
+        child.id === childId
+          ? {
+              ...child,
+              [name]:
+                name === "age"
+                  ? filteredValue === ""
+                    ? null
+                    : Number(filteredValue)
+                  : filteredValue
+            }
+          : child
+      )
+    }))
   }
 
   const addChild = () => {
