@@ -302,7 +302,7 @@ const Form = () => {
                         />
                         <input
                           placeholder="Возраст (лет)"
-                          type="tel"
+                          type="number"
                           className="child__age"
                           required
                           name="age"
