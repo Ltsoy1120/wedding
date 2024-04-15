@@ -101,7 +101,9 @@ const Form = () => {
   ) => {
     const { name, value } = e.target
 
-    if (name === "age" && value !== "" && !/^\d+$/.test(value)) {
+    const filteredValue = name === "age" ? value.replace(/[^0-9]/g, "") : value
+
+    if (name === "age" && filteredValue !== "" && !/^\d+$/.test(value)) {
       return
     }
 
@@ -112,7 +114,11 @@ const Form = () => {
           ? {
               ...child,
               [name]:
-                name === "age" ? (value === "" ? null : Number(value)) : value
+                name === "age"
+                  ? filteredValue === ""
+                    ? null
+                    : Number(value)
+                  : value
             }
           : child
       )
@@ -171,7 +177,6 @@ const Form = () => {
     }
   }
 
-  console.log("error", error)
   console.log("state", state)
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
