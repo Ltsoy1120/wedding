@@ -254,13 +254,15 @@ const Form = () => {
                       >
                         +
                       </button>
-                      <button
-                        type="button"
-                        className="delete-btn"
-                        onClick={() => deleteChild(child.id)}
-                      >
-                        <img src="static/images/delete.png" alt="delete" />
-                      </button>
+                      {state.children.length > 1 && (
+                        <button
+                          type="button"
+                          className="delete-btn"
+                          onClick={() => deleteChild(child.id)}
+                        >
+                          <img src="static/images/delete.png" alt="delete" />
+                        </button>
+                      )}
                     </div>
                   ))}
               </div>
